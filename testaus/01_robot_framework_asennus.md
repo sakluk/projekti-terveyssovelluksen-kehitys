@@ -105,7 +105,7 @@ QWeb                            3.1.0
 ...
 ```
 ### Testaa Qweb:n toiminta
-Tee tiedosto `demo.robot` ja kopioi sinne seuraava teksti. Tiedosto pitää löytyä samasta hakemistosta kuin missä annetaan `robot` komento (ks. seuraava kohta).
+Tee tiedosto `qweb_test.robot` ja kopioi sinne seuraava teksti. Tiedosto pitää löytyä samasta hakemistosta kuin missä annetaan `robot` komento (ks. seuraava kohta).
 ```
 *** Settings ***
 Library    QWeb     # Import library
@@ -122,6 +122,6 @@ Sitten testaa Qwebin toiminta antamalla seuraava komento komentoikkunaan:
 ```bash
 robot demo1.robot
 ```
-Huomaa, että `demo1.robot` tiedosto pitää löytyä hakemistosta, jossa tämä komento suoritetaan.
+Huomaa, että `qweb_test.robot` tiedosto pitää löytyä hakemistosta, jossa tämä komento suoritetaan.
 
 
