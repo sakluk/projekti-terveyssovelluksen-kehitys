@@ -60,3 +60,68 @@ Tarvittaessa voit asentaa selainajurit manuaalisesti. Tässä on linkit yleisimp
 
 Lisätietoa aiheesta löytyy sivulta: https://www.selenium.dev/selenium/docs/api/py/index.html#drivers
 
+### Selainajurien testaaminen
+Testaa selainajurien toiminta avaamalla Python IDE (esim. PyCharm tai VSCode) ja aja seuraavat Python-koodit:
+#### Firefox
+```Python
+from selenium import webdriver
+try:
+    browser = webdriver.Firefox()
+    browser.get('http://selenium.dev/')
+except Exception as e:
+    print(e)
+```
+#### Edge
+```Python
+from selenium import webdriver
+try:
+    browser = webdriver.Edge()
+    browser.get('http://selenium.dev/')
+except Exception as e:
+    print(e)
+```
+#### Chrome
+```Python
+from selenium import webdriver
+try:
+    browser = webdriver.Chrome()
+    browser.get('http://selenium.dev/')
+except Exception as e:
+    print(e)
+```
+### QWeb asennus
+Asenna QWeb suorittamalla oheinen koodi komentoikkunassa:
+```bash
+pip install Qweb
+```
+Tarkista seuraavalla komennolla, että Qweb löytyy listalta:
+```bash
+pip list
+```
+Listasta pitää löytyä (esim.)
+```bash
+...
+QWeb                            3.1.0
+...
+```
+### Testaa Qweb:n toiminta
+Tee tiedosto `demo.robot` ja kopioi sinne seuraava teksti. Tiedosto pitää löytyä samasta hakemistosta kuin missä annetaan `robot` komento (ks. seuraava kohta).
+```
+*** Settings ***
+Library    QWeb     # Import library
+
+*** Test Cases ***
+Basic interaction
+    OpenBrowser         https://qentinelqi.github.io/shop      firefox  # Avaa Firefox ja url
+    VerifyText          The animal friendly clothing company            # Tarkista sivun otsikko
+    ClickText           Scar the Lion                                   # Klikkaa tekstilinkiä: Scar the Lion
+    ClickText           Add to cart                                     # Klikkaa nappulaa (Button): Add to cart
+    DropDown            Size            Large                           # Valitse (Large) alasvetovalikosta (Size)
+```
+Sitten testaa Qwebin toiminta antamalla seuraava komento komentoikkunaan:
+```bash
+robot demo1.robot
+```
+Huomaa, että `demo1.robot` tiedosto pitää löytyä hakemistosta, jossa tämä komento suoritetaan.
+
+
