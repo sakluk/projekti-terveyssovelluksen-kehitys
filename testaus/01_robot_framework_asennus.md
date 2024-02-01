@@ -120,7 +120,7 @@ Basic interaction
 ```
 Sitten testaa Qwebin toiminta antamalla seuraava komento komentoikkunaan:
 ```bash
-robot demo1.robot
+robot qweb_test.robot
 ```
 Huomaa, että `qweb_test.robot` tiedosto pitää löytyä hakemistosta, jossa tämä komento suoritetaan.
 
