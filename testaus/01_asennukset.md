@@ -19,7 +19,7 @@ python.exe -m pip install --upgrade pip
 ```
 ### Robot Framework asennus
 Seuraavaksi asennetaan Robot Framework. Anna seuraavaksi komentorivillä seuraava komento:
-````bash
+```bash
 pip install robotframework
 ```
 Testaa, että asennus on onnistunut antamalla komentorivillä seuraava komento:
