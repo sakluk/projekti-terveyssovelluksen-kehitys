@@ -14,6 +14,7 @@ Tulemme käyttämään kurssilla seuraavia työkaluja:
 ## Asennukset
 ### pip päivitys
   Ensimmäiseksi kannattaa tarkistaa, että pip on päivitetty viimeisimpään versioon. Tämän voi tehdä ajamalla komentorivillä seuraavan komennon:
-"""
+```bash
 python.exe -m pip install --upgrade pip
-"""
+```
+
