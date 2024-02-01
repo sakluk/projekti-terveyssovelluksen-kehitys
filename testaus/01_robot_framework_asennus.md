@@ -11,7 +11,7 @@ Tulemme käyttämään kurssilla seuraavia työkaluja:
 - [Cucumber](https://cucumber.io/) - työkalu käytttäytymiseen perustuvien (BDD) automaatiotestien suunnitteluun ja toteuttamiseen
 - [Gherkin](https://cucumber.io/docs/gherkin/) - Cucumberin yhteydessä käytettävä tapa kirjoittaa BDD-testejä
 
-## Asennukset
+## Tehtävä
 ### pip päivitys
   Ensimmäiseksi kannattaa tarkistaa, että pip on päivitetty viimeisimpään versioon. Tämän voi tehdä ajamalla komentorivillä seuraavan komennon:
 ```bash
