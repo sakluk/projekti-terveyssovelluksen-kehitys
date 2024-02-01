@@ -1,7 +1,7 @@
-# 01_asennukset
+# 01. Robot Framework asennukset
 
 ## Tavoite
-Tavoitteena on asentaa projektissa käytettävät automaatiotestaustyökalut.
+Tavoitteena on asentaa projektissa käytettävä Robot Framework automaatiotestaustyökalu ja sen lisäosat.
 ## Taustaa
 Tulemme käyttämään kurssilla seuraavia työkaluja:
 - [Robot Framework](https://robotframework.org/) - yleiskäyttöinen avoimeen lähdekoodiin perustuva automaatiokehys. Sitä voidaan käyttää testiautomaatiossa ja RPA-tehtävissä.
