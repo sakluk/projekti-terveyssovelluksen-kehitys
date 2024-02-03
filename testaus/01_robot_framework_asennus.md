@@ -26,6 +26,7 @@ Testaa, että asennus on onnistunut antamalla komentorivillä seuraava komento:
 ```bash
 robot --version
 ```
+Tarkemmat ohjeet: [User Guide | (robotframework.org)](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installing-using-pip)
 ### SeleniumLibrary asennus
 SeleniumLibrary asennetaan samalla tavalla antamalla komentorivillä seuraava komento:
 ```bash
@@ -49,6 +50,7 @@ robotframework-requests         0.9.6
 robotframework-seleniumlibrary  6.2.0
 ...
 ```
+Tarkemmat ohjeet: [SeleniumLibrary | (robotframework.org)](https://robotframework.org/SeleniumLibrary/)
 ### Selainajurien asennus
 `SeleniumLibrary` asentamisen jälkeen on vielä asennettava selain- ja käyttöjärjestelmäkohtaiset selainohjaimet selaimille. Nämä ovat samat ohjaimet, joita käytetään Seleniumin kanssa. Selenium 4.10.0 selainajurit voidaan ladata ja asentaa automaattisesti Selenium Managerin avulla.
 
@@ -58,7 +60,9 @@ Tarvittaessa voit asentaa selainajurit manuaalisesti. Tässä on linkit yleisimp
 - Firefox:	https://github.com/mozilla/geckodriver/releases
 - Safari:	https://webkit.org/blog/6900/webdriver-support-in-safari-10/
 
-Lisätietoa aiheesta löytyy sivulta: https://www.selenium.dev/selenium/docs/api/py/index.html#drivers
+Lisätietoa aiheesta: 
+- [Installation - SeleniumLibrary | (robotframework.org)](https://robotframework.org/SeleniumLibrary/#installation)
+- [Installation - SeleniumLibrary | (github.com)](https://github.com/robotframework/SeleniumLibrary?tab=readme-ov-file#installation)
 
 ### Selainajurien testaaminen
 Testaa selainajurien toiminta avaamalla Python IDE (esim. PyCharm tai VSCode) ja aja seuraavat Python-koodit:
@@ -104,6 +108,8 @@ Listasta pitää löytyä (esim.)
 QWeb                            3.1.0
 ...
 ```
+Tarkemmat ohjeet:
+- [Qweb Installation | (pypi.org)](https://pypi.org/project/QWeb/#installation) 
 ### Testaa Qweb:n toiminta
 Tee tiedosto `qweb_test.robot` ja kopioi sinne seuraava teksti. Tiedosto pitää löytyä samasta hakemistosta kuin missä annetaan `robot` komento (ks. seuraava kohta).
 ```
@@ -123,5 +129,8 @@ Sitten testaa Qwebin toiminta antamalla seuraava komento komentoikkunaan:
 robot qweb_test.robot
 ```
 Huomaa, että `qweb_test.robot` tiedosto pitää löytyä hakemistosta, jossa tämä komento suoritetaan.
+
+Lisätietoa:
+- [Basic Usage - Qweb | (pypi.org)](https://pypi.org/project/QWeb/#usage)
 
 
