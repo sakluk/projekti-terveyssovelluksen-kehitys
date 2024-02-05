@@ -3,6 +3,8 @@ HTML-sivujen esikatseluun GitHubissa on muutamia tapoja tarpeidesi mukaan. Seura
 ## 1. Nopea esikatselu
 Jos haluat nähdä nopean esikatselun HTML-tiedostosta missä tahansa julkisessa arkistossa, voit käyttää [GitHub HTML Preview][ref1], kolmannen osapuolen palvelua, joka renderöi HTML-tiedoston suoraan GitHubista. Liitä vain `https://htmlpreview.github.io/?` HTML-tiedoston alkuperäisen URL-osoitteen eteen. Voit esimerkiksi esikatsella tätä tiedostoa: 
 
+[ref1]: https://htmlpreview.github.io/
+
 `[https://github.com/necolas/css3-social-signin-buttons/blob/master/index.html](https://github.com/qentinelqi/qweb/blob/master/test/resources/alert.html)`
 
 käyttämällä tätä URL-osoitetta: 
