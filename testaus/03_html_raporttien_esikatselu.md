@@ -29,11 +29,3 @@ Lähde: Keskustelu Bingin kanssa, 2/4/2024
 
 [ref1]: https://htmlpreview.github.io/ "GitHub HTML Preview"
 [ref2]: https://docs.github.com/pages/quickstart "Quickstart for Github Pages - Github Docs"
-
-## Luettavaa
-1. ["css - How to see an HTML page on Github as a normal rendered HTML page](https://stackoverflow.com/questions/8446218/how-to-see-an-html-page-on-github-as-a-normal-rendered-html-page-to-see-preview)
-2. [Quickstart for GitHub Pages - GitHub Docs](https://docs.github.com/pages/quickstart)
-3. [html - How to make a page render in browser in Github? - Stack Overflow.](https://stackoverflow.com/questions/7937551/how-to-make-a-page-render-in-browser-in-github)
-4. [Preview files on GitHub - Education & Outreach - World Wide Web.](https://www.w3.org/WAI/EO/wiki/Preview_files_on_GitHub)
-5. https://github.com/necolas/css3-social-signin-buttons/blob/master/index.html
-6. https://htmlpreview.github.io/
