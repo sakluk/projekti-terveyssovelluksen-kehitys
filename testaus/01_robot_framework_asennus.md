@@ -6,6 +6,7 @@ Tavoitteena on asentaa projektissa käytettävä Robot Framework automaatiotesta
 Tulemme käyttämään kurssilla seuraavia työkaluja:
 - [Robot Framework](https://robotframework.org/) - yleiskäyttöinen avoimeen lähdekoodiin perustuva automaatiokehys. Sitä voidaan käyttää testiautomaatiossa ja RPA-tehtävissä.
 - [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/) - verkkosovellusten testaamisen tarkoitettu lisätyökalu, käytetään Robot Frameworkin yhteydessä
+- [Browser library](https://robotframework-browser.org/) - modernimpi vaihtoehto kirjasto verkkosovellusten testaamisen
 - Selainajurit - tarvittaessa asennetaan testiautomaatiossa tarvittavat selainajurit
 - [QWeb](https://pypi.org/project/QWeb/) - Robot Framework lisäkirjasto, joka on tarkoitettu erityisesti verkkosovellusten testaamiseen
 - [Cucumber](https://cucumber.io/) - työkalu käytttäytymiseen perustuvien (BDD) automaatiotestien suunnitteluun ja toteuttamiseen
@@ -27,6 +28,7 @@ Testaa, että asennus on onnistunut antamalla komentorivillä seuraava komento:
 robot --version
 ```
 Tarkemmat ohjeet: [User Guide | (robotframework.org)](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installing-using-pip)
+
 ### SeleniumLibrary asennus
 SeleniumLibrary asennetaan samalla tavalla antamalla komentorivillä seuraava komento:
 ```bash
@@ -51,6 +53,20 @@ robotframework-seleniumlibrary  6.2.0
 ...
 ```
 Tarkemmat ohjeet: [SeleniumLibrary | (robotframework.org)](https://robotframework.org/SeleniumLibrary/)
+
+### Browser library asennus###
+Browser library tarvitsee toimiakseen sekä Pythonin että Node.JS asennukset. Tarkista ensiksi, että sinulla on molemmat asennettuina.
+
+Browser library voidaan asentaa joko selainajurien kanssa tai erikseen. Ohessa on ohjeet kuinka voit asentaa Browser libraryn selainajurien kanssa. Tällöin ei välttämättä tarvitse tehdä selainajurien asennuksia erikseen:
+
+Asenna kirjasto ja selainajurit:
+> pip install robotframework-browser
+
+Alusta kirjaston toiminta:
+> rfbrowser init
+
+Tarkemmat ohjeet: [Installation | robotframework-browser.org](https://robotframework-browser.org/#installation)
+
 ### Selainajurien asennus
 `SeleniumLibrary` asentamisen jälkeen on vielä asennettava selain- ja käyttöjärjestelmäkohtaiset selainohjaimet selaimille. Nämä ovat samat ohjaimet, joita käytetään Seleniumin kanssa. Selenium 4.10.0 selainajurit voidaan ladata ja asentaa automaattisesti Selenium Managerin avulla.
 
