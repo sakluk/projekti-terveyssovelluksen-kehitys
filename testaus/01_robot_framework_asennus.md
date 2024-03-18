@@ -6,7 +6,7 @@ Tavoitteena on asentaa projektissa käytettävä Robot Framework automaatiotesta
 Tulemme käyttämään kurssilla seuraavia työkaluja:
 - [Robot Framework](https://robotframework.org/) - yleiskäyttöinen avoimeen lähdekoodiin perustuva automaatiokehys. Sitä voidaan käyttää testiautomaatiossa ja RPA-tehtävissä.
 - [Browser library](https://robotframework-browser.org/) - moderni vaihtoehto verkkosovellusten testaamisen. Lisäkirjasto Robot Frameworkiin
-- [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/) - verkkosovellusten testaamisen tarkoitettu lisätyökalu, käytetään Robot Frameworkin yhteydessä
+- [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/) - verkkosovellusten testaamisen tarkoitettu klassinen lisätyökalu, käytetään Robot Frameworkin yhteydessä
 - Selainajurit - tarvittaessa asennetaan testiautomaatiossa tarvittavat selainajurit
 - [QWeb](https://pypi.org/project/QWeb/) - Robot Framework lisäkirjasto, joka on tarkoitettu erityisesti verkkosovellusten testaamiseen. Voidaan käyttää SeleniumLibraryn kanssa.
 
