@@ -9,8 +9,6 @@ Tulemme käyttämään kurssilla seuraavia työkaluja:
 - [Browser library](https://robotframework-browser.org/) - modernimpi vaihtoehto kirjasto verkkosovellusten testaamisen
 - Selainajurit - tarvittaessa asennetaan testiautomaatiossa tarvittavat selainajurit
 - [QWeb](https://pypi.org/project/QWeb/) - Robot Framework lisäkirjasto, joka on tarkoitettu erityisesti verkkosovellusten testaamiseen
-- [Cucumber](https://cucumber.io/) - työkalu käytttäytymiseen perustuvien (BDD) automaatiotestien suunnitteluun ja toteuttamiseen
-- [Gherkin](https://cucumber.io/docs/gherkin/) - Cucumberin yhteydessä käytettävä tapa kirjoittaa BDD-testejä
 
 ## Tehtävä
 ### pip päivitys
