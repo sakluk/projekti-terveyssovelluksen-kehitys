@@ -6,11 +6,16 @@ Tavoitteena on asentaa projektissa käytettävä Robot Framework automaatiotesta
 Tulemme käyttämään kurssilla seuraavia työkaluja:
 - [Robot Framework](https://robotframework.org/) - yleiskäyttöinen avoimeen lähdekoodiin perustuva automaatiokehys. Sitä voidaan käyttää testiautomaatiossa ja RPA-tehtävissä.
 - [Browser library](https://robotframework-browser.org/) - moderni vaihtoehto verkkosovellusten testaamisen. Lisäkirjasto Robot Frameworkiin
+
+Browser Libraryn lisäksi voi kokeilla asentaa myös:
 - [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/) - verkkosovellusten testaamisen tarkoitettu klassinen lisätyökalu, käytetään Robot Frameworkin yhteydessä
 - Selainajurit - tarvittaessa asennetaan testiautomaatiossa tarvittavat selainajurit
-- [QWeb](https://pypi.org/project/QWeb/) - Robot Framework lisäkirjasto, joka on tarkoitettu erityisesti verkkosovellusten testaamiseen. Voidaan käyttää SeleniumLibraryn kanssa.
+- [QWeb](https://pypi.org/project/QWeb/) - Robot Framework lisäkirjasto, joka on tarkoitettu erityisesti verkkosovellusten testaamiseen. Voidaan käyttää SeleniumLibraryn kanssa. Huom! QWeb vaatii toimiakseen Python version väliltä 3.8-3.11.
 
 ## Tehtävä
+
+Jos käytät Visual Studio Codea, seuraavat asennukset kannattaa tehdä VSCoden Terminal-ikkunasta käsin.
+
 ### pip päivitys
   Ensimmäiseksi kannattaa tarkistaa, että pip on päivitetty viimeisimpään versioon. Tämän voi tehdä ajamalla komentorivillä seuraavan komennon:
 ```bash
@@ -21,18 +26,20 @@ Seuraavaksi asennetaan Robot Framework. Anna seuraavaksi komentorivillä seuraav
 ```bash
 pip install robotframework
 ```
+Huom! Jos koneesi ei tunnista `pip` komentoa, kokeile `python3 -m pip`. Lisätietoa: [Should I use pip or pip3 | Stackoverflow](https://stackoverflow.com/questions/61664673/should-i-use-pip-or-pip3)
+
 Testaa, että asennus on onnistunut antamalla komentorivillä seuraava komento:
 ```bash
 robot --version
 ```
-Tarkemmat ohjeet: [User Guide | (robotframework.org)](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installing-using-pip)
+Huom! Samoin, jos koneesi ei tunnista `robot` komentoa, kokeile `python3 -m robot --version`. Lisätietoa: [User Guide | (robotframework.org)](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installing-using-pip)
 
 ### Browser library asennus
 Browser library tarvitsee toimiakseen sekä Pythonin että Node.JS asennukset. Tarkista ensiksi, että sinulla on molemmat asennettuina.
 
-Browser library voidaan asentaa joko selainajurien kanssa tai erikseen. Ohessa on ohjeet kuinka voit asentaa Browser libraryn selainajurien kanssa. Tällöin ei välttämättä tarvitse tehdä selainajurien asennuksia erikseen:
+Browser library voidaan asentaa joko selainajurien kanssa tai erikseen. Ohessa on ohjeet kuinka voit asentaa Browser libraryn selainajurien kanssa. Tällöin ei välttämättä tarvitse tehdä selainajurien asennuksia erikseen.
 
-Asenna kirjasto ja selainajurit:
+Asenna Browser library -kirjasto ja selainajurit:
 ```bash
 pip install robotframework-browser
 ```
@@ -40,9 +47,40 @@ Alusta kirjaston toiminta:
 ```bash
 rfbrowser init
 ```
-Jos `rfbrowser` ei löydy, kokeile `python -m Browser.entry init`. Tarkemmat ohjeet: [Installation | robotframework-browser.org](https://robotframework-browser.org/#installation)
+Jos `rfbrowser` komentoa ei löydy, kokeile `python -m Browser.entry init`. Tarkemmat ohjeet: [Installation | robotframework-browser.org](https://robotframework-browser.org/#installation)
+### Testaa Browser liraryn toiminta
+Tallenna seuraava koodi, esim. tekstitiedostoon `demo1.robot`:
+```Python
+*** Settings ***
+Library   Browser
 
-### SeleniumLibrary asennus
+*** Test Cases ***
+Example Test
+    New Page    https://playwright.dev
+    Get Text    h1    contains    Playwright
+```
+Suorita tämän jälkeen seuraava komento komentoriviltä:
+```bash
+robot demo1.robot
+```
+Terminaalissa tulee näkyä seuraavanlainen teksti:
+```
+==============================================================================
+Demo2
+==============================================================================
+Example Test                                                          | PASS |
+------------------------------------------------------------------------------
+Demo2                                                                 | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+```
+Lisäksi samasta kansiosta suorituksen jälkeen tulisi löytyä seuraavat tiedostot:
+- log.html
+- report.html
+Lisää esimerkkejä: [robotframework-browsers | Github](https://github.com/MarketSquare/robotframework-browser?tab=readme-ov-file#examples).
+
+---------------------------------
+### SeleniumLibrary asennus (vaihtoehtoinen työkalu)
 SeleniumLibrary asennetaan samalla tavalla antamalla komentorivillä seuraava komento:
 ```bash
 pip install --upgrade robotframework-seleniumlibrary
@@ -57,17 +95,15 @@ Package                         Version
 ------------------------------- ---------------
 ...
 robotframework                  7.0
-robotframework-assertion-engine 3.0.3
+...
 robotframework-browser          18.0.0
-robotframework-debuglibrary     2.3.0
-robotframework-pythonlibcore    4.3.0
-robotframework-requests         0.9.6
+...
 robotframework-seleniumlibrary  6.2.0
 ...
 ```
 Tarkemmat ohjeet: [SeleniumLibrary | (robotframework.org)](https://robotframework.org/SeleniumLibrary/)
 
-### Selainajurien asennus
+### Selainajurien asennus (vaihtoehtoinen työkalu)
 `SeleniumLibrary` asentamisen jälkeen on vielä asennettava selain- ja käyttöjärjestelmäkohtaiset selainohjaimet selaimille. Nämä ovat samat ohjaimet, joita käytetään Seleniumin kanssa. Selenium 4.10.0 selainajurit voidaan ladata ja asentaa automaattisesti Selenium Managerin avulla.
 
 Tarvittaessa voit asentaa selainajurit manuaalisesti. Tässä on linkit yleisimpiin selainajureihin:
@@ -80,7 +116,7 @@ Lisätietoa aiheesta:
 - [Installation - SeleniumLibrary | (robotframework.org)](https://robotframework.org/SeleniumLibrary/#installation)
 - [Installation - SeleniumLibrary | (github.com)](https://github.com/robotframework/SeleniumLibrary?tab=readme-ov-file#installation)
 
-### Selainajurien testaaminen
+### Selainajurien testaaminen (vaihtoehtoinen työkalu)
 Testaa selainajurien toiminta avaamalla Python IDE (esim. PyCharm tai VSCode) ja aja seuraavat Python-koodit:
 #### Firefox
 ```Python
@@ -109,7 +145,11 @@ try:
 except Exception as e:
     print(e)
 ```
-### QWeb asennus
+### QWeb asennus (vaihtoehtoinen työkalu)
+Huomaa, että QWeb vaatii toimiakseen Python version väliltä 3.8-3.11. Tarkista ensiksi Python-versio antamalla komento:
+```bash
+python --version
+```
 Asenna QWeb suorittamalla oheinen koodi komentoikkunassa:
 ```bash
 pip install Qweb
