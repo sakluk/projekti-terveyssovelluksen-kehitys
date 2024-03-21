@@ -5,7 +5,8 @@ Tavoitteena on asentaa projektissa käytettävä Robot Framework automaatiotesta
 ## Taustaa
 Tulemme käyttämään kurssilla seuraavia työkaluja:
 - [Robot Framework](https://robotframework.org/) - yleiskäyttöinen avoimeen lähdekoodiin perustuva automaatiokehys. Sitä voidaan käyttää testiautomaatiossa ja RPA-tehtävissä.
-- [Browser library](https://robotframework-browser.org/) - moderni vaihtoehto verkkosovellusten testaamisen. Lisäkirjasto Robot Frameworkiin
+- [Browser library](https://robotframework-browser.org/) - moderni vaihtoehto verkkosovellusten testaamisen. Lisäkirjasto Robot Frameworkiin.
+- [Robotidy](https://robotidy.readthedocs.io/en/stable/index.html) - työkalu, joka automaattisesti muotoilee Robot Framework koodit.
 
 Browser Libraryn lisäksi voi kokeilla asentaa myös:
 - [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/) - verkkosovellusten testaamisen tarkoitettu klassinen lisätyökalu, käytetään Robot Frameworkin yhteydessä
@@ -48,7 +49,8 @@ Alusta kirjaston toiminta:
 rfbrowser init
 ```
 Jos `rfbrowser` komentoa ei löydy, kokeile `python -m Browser.entry init`. Tarkemmat ohjeet: [Installation | robotframework-browser.org](https://robotframework-browser.org/#installation)
-### Testaa Browser liraryn toiminta
+
+#### Browser Libraryn testaaminen
 Tallenna seuraava koodi, esim. tekstitiedostoon `demo1.robot`:
 ```Python
 *** Settings ***
@@ -78,6 +80,24 @@ Lisäksi samasta kansiosta suorituksen jälkeen tulisi löytyä seuraavat tiedos
 - log.html
 - report.html
 Lisää esimerkkejä: [robotframework-browsers | Github](https://github.com/MarketSquare/robotframework-browser?tab=readme-ov-file#examples).
+
+### Robotidyn asennus
+Robotidy vaati Python 3.7+ ja Robot Framework 4.0.0+ versiot.
+
+Asenna Robotidy antamalla komento:
+```bash
+pip install robotframework-tidy
+```
+Robotidya käytetään antamalla hakemisto tai robot-tiedosto:
+```bash
+robotidy tests
+robotidy demo1.robot
+```
+Pikaohjeet:
+```bash
+robotidy --help
+```
+Lisätietoa: [robotidy | readthedocs](https://robotidy.readthedocs.io/en/stable/index.html)
 
 ---------------------------------
 ### SeleniumLibrary asennus (vaihtoehtoinen työkalu)
