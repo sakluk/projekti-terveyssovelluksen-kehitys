@@ -40,12 +40,7 @@ Alusta kirjaston toiminta:
 ```bash
 rfbrowser init
 ```
-Jos `rfbrowser` ei löydy, kokeile 
-```bash
-python -m Browser.entry init
-```
-
-Tarkemmat ohjeet: [Installation | robotframework-browser.org](https://robotframework-browser.org/#installation)
+Jos `rfbrowser` ei löydy, kokeile `python -m Browser.entry init`. Tarkemmat ohjeet: [Installation | robotframework-browser.org](https://robotframework-browser.org/#installation)
 
 ### SeleniumLibrary asennus
 SeleniumLibrary asennetaan samalla tavalla antamalla komentorivillä seuraava komento:
