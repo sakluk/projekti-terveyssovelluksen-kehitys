@@ -79,7 +79,7 @@ Demo2                                                                 | PASS |
 Lisäksi samasta kansiosta suorituksen jälkeen tulisi löytyä seuraavat tiedostot:
 - log.html
 - report.html
-Lisää esimerkkejä: [robotframework-browsers | Github](https://github.com/MarketSquare/robotframework-browser?tab=readme-ov-file#examples).
+Lisää esimerkkejä: [examples | robotframework-browser.org](https://robotframework-browser.org/#examples).
 
 ### Robotidyn asennus
 Robotidy vaati Python 3.7+ ja Robot Framework 4.0.0+ versiot.
