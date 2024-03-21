@@ -37,7 +37,7 @@ Huom! Samoin, jos koneesi ei tunnista `robot` komentoa, kokeile `python3 -m robo
 ### Browser library asennus
 Browser library tarvitsee toimiakseen sekä Pythonin että Node.JS asennukset. Tarkista ensiksi, että sinulla on molemmat asennettuina.
 
-Browser library voidaan asentaa joko selainajurien kanssa tai erikseen. Ohessa on ohjeet kuinka voit asentaa Browser libraryn selainajurien kanssa. Tällöin ei välttämättä tarvitse tehdä selainajurien asennuksia erikseen.
+Browser library voidaan asentaa joko selainajurien kanssa tai erikseen. Jos et ole aiemmin asentanut selainajureita, suositeltavaa on asentaa selainajureiden kanssa. Ohessa on ohjeet kuinka voit asentaa Browser libraryn selainajurien kanssa. Tällöin ei välttämättä tarvitse tehdä selainajurien asennuksia erikseen.
 
 Asenna Browser library -kirjasto ja selainajurit:
 ```bash
