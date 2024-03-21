@@ -33,11 +33,13 @@ Browser library tarvitsee toimiakseen sekä Pythonin että Node.JS asennukset. T
 Browser library voidaan asentaa joko selainajurien kanssa tai erikseen. Ohessa on ohjeet kuinka voit asentaa Browser libraryn selainajurien kanssa. Tällöin ei välttämättä tarvitse tehdä selainajurien asennuksia erikseen:
 
 Asenna kirjasto ja selainajurit:
-> pip install robotframework-browser
-
+```bash
+pip install robotframework-browser
+```
 Alusta kirjaston toiminta:
-> rfbrowser init
-
+```bash
+rfbrowser init
+```
 Tarkemmat ohjeet: [Installation | robotframework-browser.org](https://robotframework-browser.org/#installation)
 
 ### SeleniumLibrary asennus
