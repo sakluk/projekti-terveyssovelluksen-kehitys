@@ -79,6 +79,7 @@ Demo2                                                                 | PASS |
 Lisäksi samasta kansiosta suorituksen jälkeen tulisi löytyä seuraavat tiedostot:
 - log.html
 - report.html
+
 Lisää esimerkkejä: [examples | robotframework-browser.org](https://robotframework-browser.org/#examples).
 
 ### Robotidyn asennus
