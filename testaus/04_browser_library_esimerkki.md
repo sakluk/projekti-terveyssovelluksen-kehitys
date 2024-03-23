@@ -1,7 +1,10 @@
 # 04. Browser library esimerkki
 
-Tämän ohjeen tarkoitus on esitellä perusesimerkki, kuinka ottaa yhteys verkkosovellukseen ja käyttää resurssitiedostoja piilottamaan kirjautumissalasana. Tämä esimerkki on jatkokehitetty versio [Browser Libraryn 3. esimerkistä](https://robotframework-browser.org/#examples). Esimerkissä käytetään testisivua: https://www.selenium.dev/selenium/web/web-form.html.
+Tämän ohjeen tarkoitus on esitellä perusesimerkki, kuinka ottaa yhteys verkkosovellukseen ja käyttää resurssitiedostoja piilottamaan kirjautumissalasana. Tämä esimerkki on jatkokehitetty versio [Browser Libraryn 3. esimerkistä](https://robotframework-browser.org/#examples). 
 
+Esimerkissä käytetään testisivua: https://www.selenium.dev/selenium/web/web-form.html. Alla on kuvankaappaus testisivusta. ![Selenium Web Form Example](./selenium_web_form.png)
+
+## Keyword - tiedosto
 Avaa uusi tiedosto, nimeä se `Keywords.robot` ja kirjoita tiedostoon seuraavat rivit
 
 ```robotframework
@@ -11,6 +14,7 @@ ${Password}     SuperSecret!
 ${Message}      Hello, Robot Framework!\nHow are you today?
 ```
 
+## Testitapaus
 Tee toinen tiedosto, nimeä se `browser_demo.robot` ja kopioi seuraavat rivit
 
 ```robotframework
@@ -45,7 +49,11 @@ Tämä koodi suorittaa testin Chromium-selaimella, avaa selaimen, lataa lomakkee
 - ```Click With Options    button    delay=2 s```  klikkaa nappia viiveellä.
 - ```Get Text    id=message    ==    Received!```  tarkistaa, että elementin, jonka id on "message", teksti on "Received!".
 
+## Aja testi
 Aja testi antamalla terminaalissa komento
 ```Bash
 robot browser_demo.robot
 ```
+
+## Tehtävä
+Sovella oheista esimerkkiä ja tee samanlainen testi omalle sovelluksellesi.
