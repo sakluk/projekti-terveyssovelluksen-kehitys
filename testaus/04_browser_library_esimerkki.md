@@ -37,7 +37,7 @@ Tämä koodi suorittaa testin Chromium-selaimella, avaa selaimen, lataa lomakkee
 - ```Resource    Keywords.robot``` viittaa ulkoiseen tiedostoon, joka sisältää määriteltyjä avainsanoja.
 - ```New Browser    chromium    headless=No```  avaa uuden Chromium-selaimen ei-headless-tilassa, jolloin selainikkuna näkyy.
 - ```New Page    https://www.selenium.dev/selenium/web/web-form.html```  avaa uuden välilehden ja lataa annetun URL-osoitteen.
-- ```Set Browser Timeout    10 sec```  asettaa aikakatkaisun selaimelle, mutta tämä rivi on kommentoitu pois (#).
+- ```#Set Browser Timeout    10 sec```  asettaa aikakatkaisun selaimelle, mutta tämä rivi on kommentoitu pois (#).
 - ```Get Title    ==    Web form```  tarkistaa, että sivun otsikko on "Web form".
 - ```Type Text    [name="my-text"]    ${Username}    delay=0.1 s```  kirjoittaa tekstin nimellä "my-text" olevaan kenttään viiveellä.
 - ```Type Secret    [name="my-password"]    $Password    delay=0.1 s```  kirjoittaa salasanan nimellä "my-password" olevaan kenttään viiveellä.
@@ -47,5 +47,5 @@ Tämä koodi suorittaa testin Chromium-selaimella, avaa selaimen, lataa lomakkee
 
 Aja testi antamalla terminaalissa komento
 ```Bash
-robot browser_demo.robot```
-
+robot browser_demo.robot
+```
