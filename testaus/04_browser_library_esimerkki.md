@@ -1,5 +1,6 @@
 # 04. Browser library esimerkki
 
+## Tausta ja tavoite
 Tämän ohjeen tarkoitus on esitellä perusesimerkki, kuinka ottaa yhteys verkkosovellukseen ja käyttää resurssitiedostoja piilottamaan kirjautumissalasana. Tämä esimerkki on jatkokehitetty versio [Browser Libraryn 3. esimerkistä](https://robotframework-browser.org/#examples). 
 
 Esimerkissä käytetään testisivua: https://www.selenium.dev/selenium/web/web-form.html. Alla on kuvankaappaus testisivusta. ![Selenium Web Form Example](./selenium_web_form.png)
