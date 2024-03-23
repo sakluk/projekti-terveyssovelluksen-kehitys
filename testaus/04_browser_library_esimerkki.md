@@ -43,6 +43,8 @@ Tämä koodi suorittaa testin Chromium-selaimella, avaa selaimen, lataa lomakkee
 - ```Get Title    ==    Web form```  tarkistaa, että sivun otsikko on "Web form".
 - ```Type Text    [name="my-text"]    ${Username}    delay=0.1 s```  kirjoittaa tekstin nimellä "my-text" olevaan kenttään viiveellä.
 - ```Type Secret    [name="my-password"]    $Password    delay=0.1 s```  kirjoittaa salasanan nimellä "my-password" olevaan kenttään viiveellä.
+   - Huom! Normaali Robot Framework muuttujan käyttö  `${Password}` ei toimi, vaan salasana-muuttuja pitää antaa muodossa `$Password`.
+   - Lisätietoa aiheesta: [Type Secret -avainsanan dokumentaatio](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=PageContent#Type%20Secret)
 - ```Type Text    [name="my-textarea"]    ${Message}    delay=0.1 s```  kirjoittaa viestin nimellä "my-textarea" olevaan kenttään viiveellä.
 - ```Click With Options    button    delay=2 s```  klikkaa nappia viiveellä.
 - ```Get Text    id=message    ==    Received!```  tarkistaa, että elementin, jonka id on "message", teksti on "Received!".
