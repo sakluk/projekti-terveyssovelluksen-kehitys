@@ -57,6 +57,18 @@ robot browser_demo.robot
 ## Tehtävä
 Sovella oheista esimerkkiä ja tee samanlainen testi omalle sovelluksellesi.
 
+Huom! Oheisessa esimerkissä oletetaan, että kirjautumiskentät (username, password) löytyvät heti pääsivulta. Oma sovelluksesi voi vaatia ensiksi jonkin elementin valitsemista. Esimerkiksi [moodle.metropolia.fi](https://moodle.metropolia.fi) sivulla pitää ensiksi valita "Kirjaudu" -linkki, jonka jälkeen pääsee vasta kirjautumaan sisään palveluun. Tällöin koodiin pitää lisätä linkin valinta, esim.
+
+```robotframework
+*** Test Cases ***
+Test Web Form
+    New Browser    chromium    headless=No  
+    New Page       https://moodle.metropolia.fi 
+    Get Title      ==    "Etusivu | Moodle"  
+    Click          Kirjaudu
+    ....
+```
+
 ## Lisätietoa avainsanoista
 - [Importing](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Importing)
 - [Browser, Context and Page](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Browser%2C%20Context%20and%20Page)
