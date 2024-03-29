@@ -80,3 +80,6 @@ My Keyword
     [Arguments]    ${path}
     Directory Should Exist    ${path}
 ```
+Koska välimerkit ja peräkkäiset välilyönnit katsotaan erottimiksi, ne on erotettava (escaped), jos niitä tarvitaan avainsana-argumenteissa tai muualla varsinaisessa datassa. On mahdollista käyttää erityistä erotussyntaksia (escape syntax), kuten `\t` tabulaattorille ja `\xA0` välilyönnille, sekä sisäänrakennettuja muuttujia `${SPACE}` ja `${EMPTY}`. Katso lisätietoja kohdasta [Escaping](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#escaping).
+
+**Vihje:** Vaikka kahden välilyönnin käyttäminen erottimena riittää, on suositeltavaa käyttää neljää välilyöntiä, jotta erotin on helpompi tunnistaa.
