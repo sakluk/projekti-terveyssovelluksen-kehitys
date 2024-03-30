@@ -24,12 +24,12 @@ Robot Frameworkin tiedot määritellään eri osioissa, jotka on lueteltu alla.
 
 | Osio | Käyttötarkoitus |
 | ---- | --------------- |
-| Asetukset (Settings) | Testikirjastojen, resurssitiedostojen ja muuttujatiedostojen tuonti sekä testisarjojen (Test Suites) ja testitapausten metatietojen määrittäminen. |
-| Muuttujat (Variables)| Muuttujien määrittäminen, joita voidaan käyttää muualla testidatassa. |
-| Testitapaukset (Test Cases) | Testitapausten luominen käytettävissä olevista avainsanoista. |
-| Tehtävät (Tasks) | Tehtävien luominen käytettävissä olevien avainsanojen avulla. Yksi tiedosto voi sisältää vain joko testejä tai tehtäviä. |
-| Avainsanat (Keyword) | Käyttäjän avainsanojen luominen olemassa olevista alemman tason avainsanoista. |
-| Kommentit (Comments) | Lisäkommentit tai -tiedot. Robot Framework ei huomioi niitä. |
+| Asetukset (`*** Settings ***`) | Testikirjastojen, resurssitiedostojen ja muuttujatiedostojen tuonti sekä testisarjojen (Test Suites) ja testitapausten metatietojen määrittäminen. |
+| Muuttujat (`*** Variables ***`)| Muuttujien määrittäminen, joita voidaan käyttää muualla testidatassa. |
+| Testitapaukset (`*** Test Cases ***`) | Testitapausten luominen käytettävissä olevista avainsanoista. |
+| Tehtävät (`*** Tasks ***`) | Tehtävien luominen käytettävissä olevien avainsanojen avulla. Yksi tiedosto voi sisältää vain joko testejä tai tehtäviä. |
+| Avainsanat (`*** Keywords ***`) | Käyttäjän avainsanojen luominen olemassa olevista alemman tason avainsanoista. |
+| Kommentit (`*** Comments ***`) | Lisäkommentit tai -tiedot. Robot Framework ei huomioi niitä. |
 
 Eri osiot tunnistetaan niiden otsikkorivin perusteella. Suositeltava otsikkorivin muoto on esim `*** Settings ***`, mutta otsikkorivi ei erota isoja ja pieniä kirjaimia. Ympäröivät välilyönnit ovat valinnaisia ja tähti-merkkien määrä voi vaihdella, kunhan alussa on vähintään yksi tähti. Esimerkiksi myös `*settings` tunnistettaisiin osion otsikoksi.
 
