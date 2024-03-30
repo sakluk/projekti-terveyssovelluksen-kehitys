@@ -10,19 +10,17 @@ Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/deed.
 
 ## Arkkitehtuuri
 
-Robot Framework on yleinen, sovelluksesta ja teknologiasta riippumaton kehys. Sen arkkitehtuuri on erittäin modulaarinen, kuten alla olevassa kaaviossa on esitetty.
+Robot Framework on yleinen, sovelluksesta ja teknologiasta riippumaton kehys. Sen arkkitehtuuri on erittäin modulaarinen, kuten alla olevassa kaaviossa (kuva 1) on esitetty.
 
 ![Robot Frameworkin](https://robotframework.org/robotframework/latest/images/architecture.png)
 
-Kuva 1. Robot Frameworkin arkkitehtuuri
+Kuva 1. Robot Frameworkin arkkitehtuuri.
 
 Testidata on yksinkertaisessa, helposti muokattavassa taulukkomuodossa. Kun Robot Framework käynnistetään, se käsittelee tiedot (Test Data), 
-suorittaa testitapaukset (Test Cases) ja tuottaa lokitiedot ja raportit. Ydinkehys (Robot Framework) ei tiedä mitään testattavasta kohteesta (System Under Test) ja 
-vuorovaikutus sen kanssa hoidetaan kirjastojen (Test Libraries) avulla. Kirjastot voivat joko käyttää suoraan sovellusrajapintoja tai 
-käyttää alemman tason testityökaluja (Test Tools) ajureina.
+suorittaa testitapaukset (Test Cases) ja tuottaa lokitiedot ja raportit. Vuorovaikutus ydinkehyksen (Robot Framework) testattavan kohteen (System Under Test) välillä hoidetaan kirjastojen (Test Libraries) avulla. Kirjastot voivat joko käyttää suoraan sovellusrajapintoja tai alemman tason testityökaluja (Test Tools) ajureina.
 
 ## Testidatan osiot
-Robot Frameworkin tiedot määritellään eri osioissa, jotka on lueteltu alla:
+Robot Frameworkin tiedot määritellään eri osioissa, jotka on lueteltu alla.
 
 | Osio | Käyttötarkoitus |
 | ---- | --------------- |
@@ -42,6 +40,16 @@ Osioiden otsikkorivit on mahdollista [lokalisoida](https://robotframework.org/ro
 ```bash
 robot --language Finnish testit.robot
 ```
+
+Kielet on mahdollista ottaa käyttöön myös suoraan datatiedostoissa rivillä `Language: <arvo>` (isojen ja pienten kirjainten erittely) ennen mitä tahansa osion otsikkoa. Kaksoispisteen jälkeinen arvo tulkitaan samalla tavalla kuin `--language`-optiolla, esim.
+
+```robotframework
+Language: Finnish
+
+*** Asetukset ***
+Dokumentaatio    Esimerkki, jossa käytetään suomea.
+```
+
 Robot Frameworkin dokumentaation liitteestä löytyy [suomenkieliset](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#finnish-fi) vastineet avainsanoille.
 
 ## Tuetut tiedostomuodot
@@ -83,3 +91,19 @@ My Keyword
 Koska välimerkit ja peräkkäiset välilyönnit katsotaan erottimiksi, ne on erotettava (escaped), jos niitä tarvitaan avainsana-argumenteissa tai muualla varsinaisessa datassa. On mahdollista käyttää erityistä erotussyntaksia (escape syntax), kuten `\t` tabulaattorille ja `\xA0` välilyönnille, sekä sisäänrakennettuja muuttujia `${SPACE}` ja `${EMPTY}`. Katso lisätietoja kohdasta [Escaping](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#escaping).
 
 **Vihje:** Vaikka kahden välilyönnin käyttäminen erottimena riittää, on suositeltavaa käyttää neljää välilyöntiä, jotta erotin on helpompi tunnistaa.
+
+## Testitapauksen syntaksi
+### Perussyntaksi
+Testitapaukset muodostetaan testitapausosioissa käytettävissä olevista avainsanoista. Avainsanat voidaan tuoda testikirjastoista tai resurssitiedostoista tai luoda itse testitapaustiedoston avainsanaosiossa.
+
+Testitapausosion ensimmäinen sarake sisältää testitapausten nimet. Testitapaus alkaa riviltä, jolla on jotain tässä sarakkeessa, ja jatkuu seuraavaan testitapauksen nimeen tai osion loppuun. Jakson otsikon (`*** Test Cases ***`) ja ensimmäisen testin otsikon välissä ei saa olla mitään muuta tietoa.
+
+Toisessa sarakkeessa on yleensä avainsanojen nimiä. Poikkeuksena tähän sääntöön on muuttujien asettaminen avainsanan palautusarvoista, jolloin toinen ja mahdollisesti myös seuraavat sarakkeet sisältävät muuttujien nimiä ja avainsanan nimi on niiden jälkeen. Kummassakin tapauksessa avainsanan nimen jälkeiset sarakkeet sisältävät mahdolliset argumentit määritetylle avainsanalle. Alla on esimerkki testitapauksesta, joissa on käytetty avainasanoja (`Do Something`, `Get Some Value`, `Should Be Equal`), argumentteja (`first argument`, `second argument`) sekä muuttujaa (`${value}`).
+
+```robotframework
+*** Test Cases ***
+Setting Variables
+    Do Something    first argument    second argument
+    ${value} =    Get Some Value
+    Should Be Equal    ${value}    Expected value
+```
