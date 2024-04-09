@@ -2,7 +2,13 @@
 
 https://docs.robotframework.org/docs/different_libraries/requests
 
-Resurssitiedosto: restful_booker_keywords.resource:
+Seuraava esimerkki on kopioitu ja editoitu esimerkistä: https://docs.robotframework.org/docs/examples/restfulbooker. Alkuperäinen testitiedosto on jaettu kahteen osaan:
+- `restful_booker.robot` - sisältää varsinaiset testit
+- `restful_booker_keywords.resource` - sisältää avainsanat, käyttäjätunnuksen ja salasanan
+
+Tavoitteena on esitellä, miten resurssitiedostot, jotka sisältävät käyttäjätunnuksen ja salasanan, voidaan piilottaa testin raportista ja lokista.
+
+1. Kopioi seuraava resurssitiedosto `restful_booker_keywords.resource` omalle koneellesi.
 
 ```robotframework
 *** Keywords ***
@@ -15,7 +21,7 @@ Authenticate as Admin
     Set Suite Variable    ${token}
 ```
 
-restful_booker.robot:
+2. Kopio testitiedosto `restful_booker.robot` koneellesi.
 
 ```robotframework
 *** Settings ***
@@ -58,7 +64,8 @@ Delete Booking
     Status Should Be    201    ${response}
 ```
 
-Suorita testi:
+3. Suorita testi poistamalla raporteista kaikki avainsanat.
+
 ```
-robot restful_booker.robot
+robot --removekeywords all restful_booker.robot
 ```
