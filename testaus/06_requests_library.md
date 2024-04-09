@@ -66,6 +66,12 @@ Delete Booking
 
 3. Suorita testi poistamalla raporteista kaikki avainsanat.
 
+```bash
+robot --removekeywords all --log restful_booker_log.html --report restful_booker_report.html restful_booker.robot
 ```
-robot --removekeywords all restful_booker.robot
+
+Oheisen testin loki ja raportti tallennetaan komentorivillä määritettyihin tiedostoihin. Lisätietoa:
+
+```bash
+robot --help
 ```
