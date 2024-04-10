@@ -4,7 +4,7 @@ Ohjeita:
 - [RequestsLibrary dokumentaatio](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#library-documentation-top)
 - [How to perform API testing in Robot Framework | TesterDoc](https://testersdock.com/api-testing-robot-framework/)
 - [API testing with Robot Framework (part 1) | medium.com](https://fmgprado.medium.com/api-testing-with-robot-framework-part-1-997a3cb5bffe)
-- [API testing with Robot Framework (part 1) | medium.com]](https://fmgprado.medium.com/api-testing-with-robot-framework-part-2-a1b80eae4208)
+- [API testing with Robot Framework (part 1) | medium.com](https://fmgprado.medium.com/api-testing-with-robot-framework-part-2-a1b80eae4208)
  
 REST API rajapintojen testaussivustoja:
 - https://restful-booker.herokuapp.com/ - käytetty alla olevassa esimerkissä
@@ -14,13 +14,20 @@ Youtube videoita:
 - [RoboCon 2023 - API testing with Robot Framework](https://youtu.be/GeJiVcLUxGY?si=3ygQkexJAu34CCWC)
 - [RestAPI testing using Robot Framework (playlist)](https://youtube.com/playlist?list=PLUDwpEzHYYLvMLbma_Rp-6jrrpxkeH0VJ&si=H36_lMiHOq1j4gg9)
 
-Seuraava esimerkki on kopioitu ja editoitu esimerkistä: https://docs.robotframework.org/docs/examples/restfulbooker. Alkuperäinen testitiedosto on jaettu kahteen osaan:
+## Esimerkki - restful booker
+
+Tämän esimerkin tavoitteena on esitellä miten
+- voidaan testata taustapalvelimien API rajapintoja
+- tehdään [Suite Setup](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#suite-setup-and-teardown)
+- autentikaatiossa käytettävät avainsanat voidaan piilottaa raporteista ja lokitiedostoista
+
+Esimerkissä esitellyt koodit on kopioitu ja editoitu esimerkistä: https://docs.robotframework.org/docs/examples/restfulbooker. 
+Jotta käyttäjätunnus ja salasana saadaan piilotettua raportista, alkuperäinen testitiedosto on jaettu kahteen osaan:
 - `restful_booker.robot` - sisältää varsinaiset testit
 - `restful_booker_keywords.resource` - sisältää avainsanat, käyttäjätunnuksen ja salasanan
 
-Tavoitteena on esitellä, miten resurssitiedostot, jotka sisältävät käyttäjätunnuksen ja salasanan, voidaan piilottaa testin raportista ja lokista.
-
-1. Kopioi seuraava resurssitiedosto `restful_booker_keywords.resource` omalle koneellesi.
+### 1. Määritä resurssitiedosto
+Kopioi seuraava resurssitiedosto `restful_booker_keywords.resource` omalle koneellesi.
 
 ```robotframework
 *** Keywords ***
@@ -33,7 +40,8 @@ Authenticate as Admin
     Set Suite Variable    ${token}
 ```
 
-2. Kopio testitiedosto `restful_booker.robot` koneellesi.
+### 2. Määritä testitiedosto
+Kopioi seuraava testitiedosto `restful_booker.robot` koneellesi.
 
 ```robotframework
 *** Settings ***
@@ -76,7 +84,8 @@ Delete Booking
     Status Should Be    201    ${response}
 ```
 
-3. Suorita testi poistamalla raporteista kaikki avainsanat.
+### 3. Suorita testi
+Suorita testi poistamalla raporteista kaikki avainsanat.
 
 ```bash
 robot --removekeywords all --log restful_booker_log.html --report restful_booker_report.html restful_booker.robot
