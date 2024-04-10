@@ -14,6 +14,10 @@ Youtube videoita:
 - [RoboCon 2023 - API testing with Robot Framework](https://youtu.be/GeJiVcLUxGY?si=3ygQkexJAu34CCWC)
 - [RestAPI testing using Robot Framework (playlist)](https://youtube.com/playlist?list=PLUDwpEzHYYLvMLbma_Rp-6jrrpxkeH0VJ&si=H36_lMiHOq1j4gg9)
 
+Kirjoja (MetCat):
+- [Winteringham, M. (2022). Testing Web APIs. Manning Publications](https://metropolia.finna.fi/Record/nelli15.25605264500041?sid=4488449508)
+- [API framework](https://github.com/mwinteringham/api-framework/) - kirjaan liittyvä oheismateriaali
+
 ## Esimerkki - restful booker
 
 Tämän esimerkin tavoitteena on esitellä miten
