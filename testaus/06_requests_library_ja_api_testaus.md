@@ -26,7 +26,7 @@ Esimerkkikoodeja:
 
 Tämän esimerkin tavoitteena on esitellä miten
 - voidaan testata taustapalvelimien API rajapintoja
-- tehdään [Suite Setup](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#suite-setup-and-teardown)
+- tehdään koko testisarjalle alustus ([Suite Setup](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#suite-setup-and-teardown))
 - autentikaatiossa käytettävät avainsanat voidaan piilottaa raporteista ja lokitiedostoista
 
 Esimerkissä esitellyt koodit on kopioitu ja editoitu Robot Frameworkin dokumentaatiossa esitetystä [esimerkistä](https://docs.robotframework.org/docs/examples/restfulbooker). Jotta käyttäjätunnus ja salasana saadaan piilotettua raportista, 
