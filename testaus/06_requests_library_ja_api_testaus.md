@@ -9,6 +9,7 @@ Ohjeita:
 REST API rajapintojen testaussivustoja:
 - https://restful-booker.herokuapp.com/ - käytetty alla olevassa esimerkissä
 - https://jsonplaceholder.typicode.com/ - käytetty RequestsLibraryn dokumentaation [esimerkeissä](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#Usage)
+- https://thetestingworldapi.com/ - käytetty [REST API Automation - Robot-Framework](https://github.com/shakir-mairaj/REST-API-Automation--Robot-Framework) esimerkeissä
 
 Youtube videoita:
 - [RoboCon 2023 - API testing with Robot Framework](https://youtu.be/GeJiVcLUxGY?si=3ygQkexJAu34CCWC)
