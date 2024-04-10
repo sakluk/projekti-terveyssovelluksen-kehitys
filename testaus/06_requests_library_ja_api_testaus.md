@@ -18,6 +18,9 @@ Kirjoja (MetCat):
 - [Winteringham, M. (2022). Testing Web APIs. Manning Publications](https://metropolia.finna.fi/Record/nelli15.25605264500041?sid=4488449508)
 - [API framework](https://github.com/mwinteringham/api-framework/) - kirjaan liittyvä oheismateriaali
 
+Esimerkkikoodeja:
+- [REST API Automation - Robot-Framework](https://github.com/shakir-mairaj/REST-API-Automation--Robot-Framework)
+
 ## Esimerkki - restful booker
 
 Tämän esimerkin tavoitteena on esitellä miten
