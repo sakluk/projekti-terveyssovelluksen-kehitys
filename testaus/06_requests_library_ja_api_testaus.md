@@ -1,6 +1,18 @@
-# 06. Requests Library ja API testaus
+# 06. RequestsLibrary ja API testaus
 
-https://docs.robotframework.org/docs/different_libraries/requests
+Ohjeita:
+- [RequestsLibrary dokumentaatio](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#library-documentation-top)
+- [How to perform API testing in Robot Framework | TesterDoc](https://testersdock.com/api-testing-robot-framework/)
+- [API testing with Robot Framework (part 1) | medium.com](https://fmgprado.medium.com/api-testing-with-robot-framework-part-1-997a3cb5bffe)
+- [API testing with Robot Framework (part 1) | medium.com]](https://fmgprado.medium.com/api-testing-with-robot-framework-part-2-a1b80eae4208)
+ 
+REST API rajapintojen testaussivustoja:
+- https://restful-booker.herokuapp.com/ - käytetty alla olevassa esimerkissä
+- https://jsonplaceholder.typicode.com/ - käytetty RequestsLibraryn dokumentaation esimerkeissä
+
+Youtube videoita:
+- [RoboCon 2023 - API testing with Robot Framework](https://youtu.be/GeJiVcLUxGY?si=3ygQkexJAu34CCWC)
+- [RestAPI testing using Robot Framework (playlist)](https://youtube.com/playlist?list=PLUDwpEzHYYLvMLbma_Rp-6jrrpxkeH0VJ&si=H36_lMiHOq1j4gg9)
 
 Seuraava esimerkki on kopioitu ja editoitu esimerkistä: https://docs.robotframework.org/docs/examples/restfulbooker. Alkuperäinen testitiedosto on jaettu kahteen osaan:
 - `restful_booker.robot` - sisältää varsinaiset testit
