@@ -1,6 +1,7 @@
 # 06. RequestsLibrary ja API testaus
 
 Ohjeita:
+- [REquestsLibrary - Readme](https://github.com/MarketSquare/robotframework-requests#readme)
 - [RequestsLibrary dokumentaatio](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#library-documentation-top)
 - [How to perform API testing in Robot Framework | TesterDoc](https://testersdock.com/api-testing-robot-framework/)
 - [API testing with Robot Framework (part 1) | medium.com](https://fmgprado.medium.com/api-testing-with-robot-framework-part-1-997a3cb5bffe)
