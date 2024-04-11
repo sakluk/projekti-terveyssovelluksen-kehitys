@@ -30,7 +30,7 @@ Tämän esimerkin tavoitteena on esitellä miten
 - tehdään koko testisarjalle alustus ([Suite Setup](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#suite-setup-and-teardown))
 
 Esimerkissä esitellyt koodit on kopioitu ja editoitu Robot Frameworkin dokumentaatiossa esitetystä [esimerkistä](https://docs.robotframework.org/docs/examples/restfulbooker). Koodi on järjestelty uudelleen, jotta se on helpompi
-ymmärtää. Testin alussa asetuksissa on määritelty, että koko testisarja käyttää `Authenticate as Admin` avainsanaa. Tällöin sisäänkirjautuminen ja sisäänkirjautumisesta saatava token on käytettävissä koko testisarjan ajan.
+ymmärtää. Testin alussa asetuksissa on määritelty `Test Suite`. Tämä tarkoittaa, että koko testisarjan ajan on käytettävissä  `Authenticate as Admin` suorittama sisäänkirjautuminen ja siitä saatava kirjautumisavain (token).
 
 Kopioi seuraava testitiedosto koneellesi tiedostoon: `restful_booker.robot`.
 
