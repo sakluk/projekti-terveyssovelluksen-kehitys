@@ -35,7 +35,7 @@ pip install robotframework-requests
 ### Pikatesti
 Oheinen esimerkki on muokattu RequestsLibraryn [Readme - Quick Start](https://github.com/MarketSquare/robotframework-requests#readme) esimerkistä.
 
-```robotframework```
+```robotframework
 *** Settings ***
 Library               RequestsLibrary
 
@@ -47,39 +47,51 @@ Quick Get A JSON Body Test
 ```
 
 ### Toinen esimerkki
+
 Tämä esimerkki on myös muokattu RequestsLibraryn [Readme - Quick Start](https://github.com/MarketSquare/robotframework-requests#readme) esimerkeistä. Esimerkki käyttää `Suite Setup` luomaan yhteys palvelimelle. Yhteys on käytössä koko testisarjan ajan.
+
+Ensimmäisessä testissä `Get Request Test` esitellään 
+- miten voit testata onko palautteena tulevassa JSON-rakenteessa tietty otsikko,
+- sisältääkö JSON tietyn tekstin ja kolmanneksi,
+- onko otsikko tietyn tekstin mukainen
+
+Lisätietoa: [Robot Frameworkin standardikirjastot](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#standard-libraries) > [Builtin](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html).
 
 ```robotframework
 *** Settings ***                                                                                       
 Library    Collections                                                                                 
 Library    RequestsLibrary                                                                             
                                                                                                        
-Suite Setup    Create Session  jsonplaceholder  https://jsonplaceholder.typicode.com                   
+Suite Setup    Create Session    jsonplaceholder    https://jsonplaceholder.typicode.com                   
                                                                                                        
 *** Test Cases ***                                                                                     
                                                                                                        
 Get Request Test                                                                                       
-    ${resp_json}=     GET On Session  jsonplaceholder  /posts/1
-                                                                                                     
-    Should Be Equal As Strings          ${resp_google.reason}  OK                                      
-    Dictionary Should Contain Value     ${resp_json.json()}  sunt aut facere repellat provident        
+    ${resp}=     GET On Session    jsonplaceholder    /posts/1
+
+    Log    ${resp.json()}     # Log the response json
+
+    Status Should Be    200    ${resp}
+    Dictionary Should Contain Key    ${resp.json()}  title
+    Dictionary Should Contain Value    ${resp.json()}    sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+    Should Be Equal As Strings    ${resp.json()}[title]    sunt aut facere repellat provident occaecati excepturi optio reprehenderit                                                                             
+    Should Contain    ${resp.json()}[title]    sunt aut facere
                                                                                                        
 Post Request Test                                                                                      
-    &{data}=    Create dictionary  title=Robotframework requests  body=This is a test!  userId=1       
-    ${resp}=    POST On Session    jsonplaceholder  /posts  json=${data}  expected_status=anything     
+    &{data}=    Create dictionary    title=Robotframework requests    body=This is a test!    userId=1       
+    ${resp}=    POST On Session      jsonplaceholder    /posts    json=${data}    expected_status=anything     
+    
+    Log    ${resp.json()}     # Log the response json
                                                                                                        
-    Status Should Be                 201  ${resp}      
+    Status Should Be    201    ${resp}    
 ```
 
+### Restful booker -esimerkki
 
-Tämän esimerkin tavoitteena on esitellä miten
-- voidaan testata taustapalvelimien API rajapintoja
-- tehdään koko testisarjalle alustus ([Suite Setup](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#suite-setup-and-teardown))
+Tämä esimerkki muokattu Robot Frameworkin dokumentaatiossa esitetystä [esimerkistä](https://docs.robotframework.org/docs/examples/restfulbooker). Koodi on järjestelty uudelleen, jotta se on helpompi
+ymmärtää. Testin alussa asetuksissa on määritelty [Suite Setup](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#suite-setup-and-teardown), jolloin `Authenticate as Admin` suorittama sisäänkirjautuminen ja siitä saatava kirjautumisavain (token) on käytössä koko testisarjan ajan.
 
-Esimerkissä esitellyt koodit on kopioitu ja editoitu Robot Frameworkin dokumentaatiossa esitetystä [esimerkistä](https://docs.robotframework.org/docs/examples/restfulbooker). Koodi on järjestelty uudelleen, jotta se on helpompi
-ymmärtää. Testin alussa asetuksissa on määritelty `Test Suite`. Tämä tarkoittaa, että koko testisarjan ajan on käytettävissä  `Authenticate as Admin` suorittama sisäänkirjautuminen ja siitä saatava kirjautumisavain (token).
-
-Kopioi seuraava testitiedosto koneellesi tiedostoon: `restful_booker.robot`.
+Kopioi koodi esim. tiedostoon `requests_demo3.robot`.
 
 ```robotframework
 *** Settings ***
@@ -155,12 +167,12 @@ Delete Booking
 ```
 
 ## Suorita testi
-Suorita testi antamalla komentoikkunassa komento:
+Suorita testi antamalla komento:
 ```bash
-robot --log restful_booker_log.html --report restful_booker_report.html restful_booker.robot
+robot --log requests_demo3_log.html --report requests_demo3_report.html requests_demo3.robot
 ```
 
-Oheisen testin loki ja raportti tallennetaan komentorivillä määritettyihin tiedostoihin. Lisätietoa:
+Oheisen testin loki ja raportti tallennetaan komentorivillä määritettyihin tiedostoihin. Lisätietoa esim. [User Guide > Output files](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#output-files) tai pikaopas antamalla komento:
 
 ```bash
 robot --help
