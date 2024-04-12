@@ -1,26 +1,33 @@
 # 06. RequestsLibrary ja API testaus
 
-Ohjeita:
-- [REquestsLibrary - Readme](https://github.com/MarketSquare/robotframework-requests#readme)
+## Asennusohjeet
+```bash
+pip install robotframework-requests
+```
+
+## Ohjeita ja vinkkejä
+
+### Ohjeet
+- [RequestsLibrary - Readme](https://github.com/MarketSquare/robotframework-requests#readme)
 - [RequestsLibrary dokumentaatio](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#library-documentation-top)
 - [How to perform API testing in Robot Framework | TesterDoc](https://testersdock.com/api-testing-robot-framework/)
 - [API testing with Robot Framework (part 1) | medium.com](https://fmgprado.medium.com/api-testing-with-robot-framework-part-1-997a3cb5bffe)
 - [API testing with Robot Framework (part 1) | medium.com](https://fmgprado.medium.com/api-testing-with-robot-framework-part-2-a1b80eae4208)
  
-REST API rajapintojen testaussivustoja:
+### REST API rajapintojen testaussivustoja
 - https://restful-booker.herokuapp.com/ - käytetty alla olevassa esimerkissä
 - https://jsonplaceholder.typicode.com/ - käytetty RequestsLibraryn dokumentaation [esimerkeissä](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#Usage)
 - https://thetestingworldapi.com/ - käytetty [REST API Automation - Robot-Framework](https://github.com/shakir-mairaj/REST-API-Automation--Robot-Framework) esimerkeissä
 
-Youtube videoita:
+### Youtube videot
 - [RoboCon 2023 - API testing with Robot Framework](https://youtu.be/GeJiVcLUxGY?si=3ygQkexJAu34CCWC)
 - [RestAPI testing using Robot Framework (playlist)](https://youtube.com/playlist?list=PLUDwpEzHYYLvMLbma_Rp-6jrrpxkeH0VJ&si=H36_lMiHOq1j4gg9)
 
-Kirjoja (MetCat):
+### Kirjoja (MetCat)
 - [Winteringham, M. (2022). Testing Web APIs. Manning Publications](https://metropolia.finna.fi/Record/nelli15.25605264500041?sid=4488449508)
 - [API framework](https://github.com/mwinteringham/api-framework/) - kirjaan liittyvä oheismateriaali
 
-Esimerkkikoodeja:
+### Esimerkkikoodit
 - [REST API Automation - Robot-Framework](https://github.com/shakir-mairaj/REST-API-Automation--Robot-Framework)
 
 ## Esimerkki - restful booker
@@ -108,7 +115,7 @@ Delete Booking
 ```
 
 ## Suorita testi
-Suorita testi. 
+Suorita testi antamalla komentoikkunassa komento:
 ```bash
 robot --log restful_booker_log.html --report restful_booker_report.html restful_booker.robot
 ```
