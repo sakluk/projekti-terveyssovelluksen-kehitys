@@ -15,9 +15,9 @@ pip install robotframework-requests
 - [API testing with Robot Framework (part 1) | medium.com](https://fmgprado.medium.com/api-testing-with-robot-framework-part-2-a1b80eae4208)
  
 ### REST API rajapintojen testaussivustoja
-- https://restful-booker.herokuapp.com/ - käytetty alla olevassa esimerkissä
-- https://jsonplaceholder.typicode.com/ - käytetty RequestsLibraryn dokumentaation [esimerkeissä](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html#Usage)
-- https://thetestingworldapi.com/ - käytetty [REST API Automation - Robot-Framework](https://github.com/shakir-mairaj/REST-API-Automation--Robot-Framework) esimerkeissä
+- https://jsonplaceholder.typicode.com/ - käytetty RequestsLibraryn dokumentaation esimerkkeissä
+- https://restful-booker.herokuapp.com/ - käytetty Restful booker -esimerkissä
+- https://thetestingworldapi.com/ - käytetty REST API Automation - Robot Framework -esimerkissä
 
 ### Youtube videot
 - [RoboCon 2023 - API testing with Robot Framework](https://youtu.be/GeJiVcLUxGY?si=3ygQkexJAu34CCWC)
