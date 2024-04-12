@@ -30,7 +30,47 @@ pip install robotframework-requests
 ### Esimerkkikoodit
 - [REST API Automation - Robot-Framework](https://github.com/shakir-mairaj/REST-API-Automation--Robot-Framework)
 
-## Esimerkki - restful booker
+## Esimerkkejä
+
+### Pikatesti
+Oheinen esimerkki on muokattu RequestsLibraryn [Readme - Quick Start](https://github.com/MarketSquare/robotframework-requests#readme) esimerkistä.
+
+```robotframework```
+*** Settings ***
+Library               RequestsLibrary
+
+*** Test Cases ***
+
+Quick Get A JSON Body Test
+    ${response}=    GET  https://jsonplaceholder.typicode.com/posts/1
+    Should Be Equal As Strings    1  ${response.json()}[id]
+```
+
+### Toinen esimerkki
+Tämä esimerkki on myös muokattu RequestsLibraryn [Readme - Quick Start](https://github.com/MarketSquare/robotframework-requests#readme) esimerkeistä. Esimerkki käyttää `Suite Setup` luomaan yhteys palvelimelle. Yhteys on käytössä koko testisarjan ajan.
+
+```robotframework
+*** Settings ***                                                                                       
+Library    Collections                                                                                 
+Library    RequestsLibrary                                                                             
+                                                                                                       
+Suite Setup    Create Session  jsonplaceholder  https://jsonplaceholder.typicode.com                   
+                                                                                                       
+*** Test Cases ***                                                                                     
+                                                                                                       
+Get Request Test                                                                                       
+    ${resp_json}=     GET On Session  jsonplaceholder  /posts/1
+                                                                                                     
+    Should Be Equal As Strings          ${resp_google.reason}  OK                                      
+    Dictionary Should Contain Value     ${resp_json.json()}  sunt aut facere repellat provident        
+                                                                                                       
+Post Request Test                                                                                      
+    &{data}=    Create dictionary  title=Robotframework requests  body=This is a test!  userId=1       
+    ${resp}=    POST On Session    jsonplaceholder  /posts  json=${data}  expected_status=anything     
+                                                                                                       
+    Status Should Be                 201  ${resp}      
+```
+
 
 Tämän esimerkin tavoitteena on esitellä miten
 - voidaan testata taustapalvelimien API rajapintoja
