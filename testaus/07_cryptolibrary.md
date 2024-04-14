@@ -4,10 +4,10 @@
 
 [CryptoLibrary](https://pypi.org/project/robotframework-crypto/) on Python-kirjasto salasanojen turvalliseen käsittelyyn. CryptoLibrary käyttää [epäsymmetristä elliptistä salausta](https://pypi.org/project/robotframework-crypto/) luottamuksellisten tietojen turvalliseen tallentamiseen. 
 
-Avainparit (yksityinen ja julkinen avain) luodaan testiympäristöä varten komennolla `CryptoLibrary`. Avainparin julkista avainta voidaan käyttää salaamaan kaikki tiedot (salasanat, henkilökohtaiset tiedot jne.), joita ei haluta julkisiksi.
+Avainparit (yksityinen ja julkinen avain) luodaan testiympäristöä varten komennolla `CryptoLibrary`. Avainparin julkista avainta (public key) käytetään salaamaan kaikki luottamuksellinen tieto, joita ei haluta julkisiksi (salasanat, henkilökohtaiset tiedot jne.) ja yksityisellä avaimella (private key) avataan salattu data.
 
 Komennolla `CryptoClient` salataan tietoja. Salatut tiedot näyttävät esim. tältä:
-`crypt:tIdr5s65+ggfJZl46pJgljioCUePUdZLozgiwquznw+xSlmzT3dcvfrTL9wIdRwmNOJuONT7FBW5`
+`crypt:tIdr5s65+ggfJZl46pJgljioCUePUdZLozgiwquznw+xSlmzT3dcvfrTL9wIdRwmNOJuONT7FBW5`. 
 
 Salattu tieto voidaan purkaa Robot Frameworkin CryptoLibraryn avulla.
 
