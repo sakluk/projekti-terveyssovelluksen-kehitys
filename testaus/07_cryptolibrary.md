@@ -70,3 +70,10 @@ Test Web Form
     Get Text    id=message    ==    Received!
     Sleep    2.0 s
 ```
+Ohessa on esimerkki lokitiedoston (log.html) sisällöstä:
+```
+KEYWORD Browser . Type Text   [name="my-text"]    ${Username}    delay=0.1 s
+Documentation:	Types the given txt into the text field found by selector.
+...
+10:11:54.407	INFO	Types the text '***' in the given field.
+```
