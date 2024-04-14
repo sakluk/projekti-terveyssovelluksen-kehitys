@@ -42,7 +42,7 @@ Tiedot salataan käyttämällä CryptoClient työkalua. Anna komento:
 ```bash
 python -m CryptoClient
 ```
-Valitse `Encrypt` -> `Enter the password to encrypt` ja kirjoita salattava tieto. Kopioi salattu tieto osaksi koodia (kopioi myös teksti "crypt:")
+Valitse `Encrypt` -> `Enter the password to encrypt` ja kirjoita salattava tieto. Kopioi salattu tieto osaksi koodia. Muista kopioida myös teksti `crypt:`.
 
 ## CryptoLibraryn käyttö testeissä
 Ohessa on esimerkki, jossa on salattu sekä käyttäjätunnus että salasana. Kun testi ajetaan, molempien muuttujien salaus puretaan ja tiedot syötetään normaalisti verkkosovelluksen kenttiin. Huomaa kuitenkin, että lokitiedostossa ei näy kumpaakaan tietoa.
