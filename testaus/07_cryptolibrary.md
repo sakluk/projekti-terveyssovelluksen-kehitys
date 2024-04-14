@@ -28,7 +28,12 @@ python -m CryptoLibrary
 Generoi avaimet valitsemalla:
 - `Open config` -> `Configure key pair`-> `Generate key pair`.
 
-Tämä luo yksityisen ja julkisen avaimen sekä kryptatun salasanan. Avaimet tallennetaan tiedostoihin: `private_key.json` ja `public_key.json`. Kryptattu salasana löytyy tiedostosta: `password_hash.json`. Oletusarvoisesti tiedostot tallennetaan CryptoLibraryn asennuskansion alle, joka esim. Windows-järjestelmässä voi olla `C:\Users\USERNAME\AppData\Local\Programs\Python\Python311\Lib\site-packages\CryptoLibrary\keys\Python311\Lib\site-packages\CryptoLibrary\keys\`. Pidä ne kaikki tallessa.
+Kaksi avainta ja salasana on nyt luotu ja kirjoitettu levylle:
+- `Password_hash.json` -tiedosto, joka sisältää yksityisen avaimen suojaavan (hashed) salasanan.
+- `private_key.json` -tiedosto, joka sisältää (AES-salatun) yksityisen avaimen.
+- `public_key.key`-tiedosto, joka sisältää julkisen avaimen.
+
+Konsoli tulostaa lisäksi polun. Lopuksi myös julkinen avain tulostetaan konsoliin. Pidä kaikki avaimet tallessa.
 
 Yksityistä avainta tarvitaan arvojen purkamiseen testipalvelimella. Se on kopioitava manuaalisesti tai lisättävä komentorivikäyttöliittymän (CLI) kautta.
 
