@@ -11,6 +11,10 @@ Komennolla `CryptoClient` salataan tietoja. Salatut tiedot näyttävät esim. t�
 
 Salattu tieto voidaan purkaa Robot Frameworkin CryptoLibraryn avulla.
 
+Lisätietoa:
+- [Protect your test data with Robot Framework CryptoLibrary](https://michaelhallik.github.io/blog/2021/11/24/Robot-Framework-Crypto-Library)
+- [Robot Framework CryptoLibrary | pypi.org](https://pypi.org/project/robotframework-crypto/)
+
 ## Asennus
 Asenna CryptoLibrary antamalla komento:
 ```bash
