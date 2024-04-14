@@ -28,7 +28,7 @@ python -m CryptoLibrary
 Generoi avaimet valitsemalla:
 - `Open config` -> `Configure key pair`-> `Generate key pair`.
 
-Tämä luo yksityisen ja julkisen avaimen. Avaimet tallennetaan tiedostoihin: `private_key.json` ja `public_key.key`. 
+Tämä luo yksityisen ja julkisen avaimen. Avaimet tallennetaan tiedostoihin: `private_key.json` ja `public_key.json`. Pidä ne tallessa.
 Yksityistä avainta tarvitaan arvojen purkamiseen testipalvelimella. Se on 
 kopioitava manuaalisesti tai lisättävä komentorivikäyttöliittymän (CLI) kautta.
 
