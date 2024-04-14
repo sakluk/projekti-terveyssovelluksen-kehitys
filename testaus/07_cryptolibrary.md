@@ -33,7 +33,7 @@ Kaksi avainta ja salasana on nyt luotu ja kirjoitettu levylle:
 - `private_key.json` -tiedosto, joka sisältää (AES-salatun) yksityisen avaimen.
 - `public_key.key`-tiedosto, joka sisältää julkisen avaimen.
 
-Konsoli tulostaa lisäksi polun. Lopuksi myös julkinen avain tulostetaan konsoliin. Pidä kaikki avaimet tallessa.
+Konsoli tulostaa lisäksi polun mistä tiedostot löytyvät. Lopuksi myös julkinen avain tulostetaan konsoliin. Pidä kaikki avaimet tallessa.
 
 Yksityistä avainta tarvitaan arvojen purkamiseen testipalvelimella. Se on kopioitava manuaalisesti tai lisättävä komentorivikäyttöliittymän (CLI) kautta.
 
