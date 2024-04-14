@@ -45,7 +45,7 @@ python -m CryptoClient
 Valitse `Encrypt` -> `Enter the password to encrypt` ja kirjoita salattava tieto. Kopioi salattu tieto osaksi koodia. Muista kopioida myös teksti `crypt:`.
 
 ## CryptoLibraryn käyttö testeissä
-Ohessa on esimerkki, jossa on salattu sekä käyttäjätunnus että salasana. Kun testi ajetaan, molempien muuttujien salaus puretaan ja tiedot syötetään normaalisti verkkosovelluksen kenttiin. Huomaa kuitenkin, että lokitiedostossa ei näy kumpaakaan tietoa.
+Ohessa on esimerkki, jossa on salattu sekä käyttäjätunnus että salasana. Kun testi ajetaan, molempien muuttujien salaus puretaan ja tiedot syötetään normaalisti verkkosovelluksen kenttiin. Jos argumentti `variable_decryption=True`, kaikki testisarjan tai testitapauksen yhteydessä käytettävissä olevat muuttujat, jotka sisältävät salattua tekstiä, puretaan automaattisesti. Huomaa kuitenkin, että lokitiedostossa kaikki puretut tekstit korvataan merkkijonolla `***`.
 
 ```robotframework
 *** Settings ***
