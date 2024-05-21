@@ -17,7 +17,7 @@
 4. Pituus: Ensimmäisen rivin tulisi mieluiten olla enintään 50 merkkiä pitkä, ja koko teksti tulisi rajoittaa 72 merkkiin.
 5. Sisältö: Ole suora, yritä välttää täytesanoja, esimerkiksi: vaikka, ehkä, luulen, tavallaan. Ajattele kuin Iltalehden toimittaja.
 ## Esimerkkejä hyvistä kommenteista
-- `git commit -m 'parannus: paranna suorituskykyä laiskan latauksen toteutuksella kuvien osalta'`
+- `git commit -m 'parannus: paranna suorituskykyä kuvien latausnopeuden osalta'`
 - `git commit -m 'päivitys: päivitä npm-riippuvuus uusimpaan versioon'`
 - `git commit -m 'Korjaa virhe, joka estää käyttäjiä lähettämästä tilauslomaketta'`
 - `git commit -m 'Päivitä virheellinen asiakkaan puhelinnumero alatunnisteen rungossa'`
