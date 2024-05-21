@@ -1,6 +1,6 @@
 # Muutosten kommentointi
 ## Perussyntaksi
-`git commit -m <kommentti>
+`git commit -m <kommentti>`
 ## Laajennettu syntaksi
 `git commit -m <otsikko> -m <runko>`
 ## Miksi?
@@ -21,4 +21,5 @@
 - `git commit -m 'päivitys: päivitä npm-riippuvuus uusimpaan versioon'`
 - `git commit -m 'Korjaa virhe, joka estää käyttäjiä lähettämästä tilauslomaketta'`
 - `git commit -m 'Päivitä virheellinen asiakkaan puhelinnumero alatunnisteen rungossa'`
-  
+## Alkuperäinen lähde
+- Pina, M. (Jan 4, 2022). [How to write better git commit messages | freecodecamp.org](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)
