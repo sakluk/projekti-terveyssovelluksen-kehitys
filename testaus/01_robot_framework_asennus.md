@@ -2,20 +2,22 @@
 
 ## Tavoite
 Tavoitteena on asentaa projektissa käytettävä Robot Framework automaatiotestaustyökalu ja sen lisäosat.
+
 ## Taustaa
 Tulemme käyttämään kurssilla seuraavia työkaluja:
 - [Robot Framework](https://robotframework.org/) - yleiskäyttöinen avoimeen lähdekoodiin perustuva automaatiokehys. Sitä voidaan käyttää testiautomaatiossa ja RPA-tehtävissä.
 - [Browser library](https://robotframework-browser.org/) - moderni vaihtoehto verkkosovellusten testaamisen. Lisäkirjasto Robot Frameworkiin.
+- [Requests library](https://github.com/MarketSquare/robotframework-requests#readme) - Taustapalvelimen HTTP API testaamiseen. Lisäkirjasto Robot Frameworkiin.
+- [CryptoLibrary](https://pypi.org/project/robotframework-crypto/) - Python-lisäkirjasto salasanojen turvalliseen käsittelyyn.
 - [Robotidy](https://robotidy.readthedocs.io/en/stable/index.html) - työkalu, joka automaattisesti muotoilee Robot Framework koodit.
 
-Browser Libraryn lisäksi voi kokeilla asentaa myös:
-- [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/) - verkkosovellusten testaamisen tarkoitettu klassinen lisätyökalu, käytetään Robot Frameworkin yhteydessä
-- Selainajurit - tarvittaessa asennetaan testiautomaatiossa tarvittavat selainajurit
-- [QWeb](https://pypi.org/project/QWeb/) - Robot Framework lisäkirjasto, joka on tarkoitettu erityisesti verkkosovellusten testaamiseen. Voidaan käyttää SeleniumLibraryn kanssa. Huom! QWeb vaatii toimiakseen Python version väliltä 3.8-3.11.
+**Huom!** Verkkosovellusten testaamisessa käytetään usein [SeleniumLibrarya](https://robotframework.org/SeleniumLibrary/). Se on vanhempi lisäkirjasto kuin `Browser Library` ja siihen löytyy erittäin hyvin esimerkkejä. `SeleniumLibraryn` asentamisen jälkeen on vielä asennettava selain- ja käyttöjärjestelmäkohtaiset [selainohjaimet](https://robotframework.org/SeleniumLibrary/#browser-drivers) selaimille. Päälisätyökalu verkkosovelluksen käyttöliittymän testaamiseen tällä kurssilla on kuitenkin `Browser Library`.
 
-## Tehtävä
+**Huom 2!** Kolmas verkkosovellusten testaamiseen soveltuva lisätyökalu on [QWeb](https://pypi.org/project/QWeb/). Sitä käytetään SeleniumLibraryn kanssa. QWeb vaatii toimiakseen Python version väliltä 3.8-3.11.
 
-Jos käytät Visual Studio Codea, seuraavat asennukset kannattaa tehdä VSCoden Terminal-ikkunasta käsin.
+## Asennusohjeet
+
+Jos käytät [Visual Studio Codea](https://code.visualstudio.com/), seuraavat asennukset kannattaa tehdä VSCoden Terminal-ikkunasta käsin.
 
 ### pip päivitys
   Ensimmäiseksi kannattaa tarkistaa, että pip on päivitetty viimeisimpään versioon. Tämän voi tehdä ajamalla komentorivillä seuraavan komennon:
@@ -125,7 +127,7 @@ robotframework-seleniumlibrary  6.2.0
 Tarkemmat ohjeet: [SeleniumLibrary | (robotframework.org)](https://robotframework.org/SeleniumLibrary/)
 
 ### Selainajurien asennus (vaihtoehtoinen työkalu)
-`SeleniumLibrary` asentamisen jälkeen on vielä asennettava selain- ja käyttöjärjestelmäkohtaiset selainohjaimet selaimille. Nämä ovat samat ohjaimet, joita käytetään Seleniumin kanssa. Selenium 4.10.0 selainajurit voidaan ladata ja asentaa automaattisesti Selenium Managerin avulla.
+
 
 Tarvittaessa voit asentaa selainajurit manuaalisesti. Tässä on linkit yleisimpiin selainajureihin:
 - Chrome:	https://chromedriver.chromium.org/downloads
