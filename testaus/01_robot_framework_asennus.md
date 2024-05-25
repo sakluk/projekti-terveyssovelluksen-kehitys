@@ -43,7 +43,7 @@ oman-projektin-nimi
 Testaa ensiksi, että Python-asennus on kunnossa.
 
 1. VSCodessa valitse `testaus` -kansio.
-2. Luo uusi Python-kooditiedosto nimeltä: `asennustesti_01.py`.
+2. Luo uusi Python-kooditiedosto nimeltä: `asennustesti.py`.
 3. Kirjoita tiedostoon seuraava koodi:
 ```python
 import sys
