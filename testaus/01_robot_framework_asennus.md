@@ -144,7 +144,22 @@ Asenna Robotidy antamalla komento:
 pip install robotframework-tidy
 ```
 
-### 8. Asennusten testaus
+### 8. Asennuslistan tarkistus
+Anna terminaalissa komento:
+```bash
+pip list
+```
+Tarkista, että listasta löytyvät seuraavat modulit:
+```
+robotframework                  7.0
+robotframework-browser          18.2.0
+robotframework-crypto           0.3.0
+robotframework-requests         0.9.6
+robotframework-tidy             4.11.0
+```
+Huom. Versionumerot saattavat olla eri.
+
+### 9. Asennusten testaus
 Kopioi [asennustesti.py](asennustesti.py) tiedosto `testaus`-kansioon ja aja se. Jos asennukset ovat kunnossa, tuloksena terminaali-ikkunaan tulostuu, esim.
 ```
 Python: 3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)]
