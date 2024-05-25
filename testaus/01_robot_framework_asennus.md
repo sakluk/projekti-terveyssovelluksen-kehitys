@@ -118,11 +118,39 @@ rfbrowser init
 Jos `rfbrowser` komentoa ei löydy, kokeile 
 ```bash
 py -m Browser.entry init
-```bash
+```
 Tarkemmat ohjeet: 
 - [Installation | robotframework-browser.org](https://robotframework-browser.org/#installation)
 
-#### Browser Libraryn testaaminen
+### 5. Requests libraryn asennus
+Anna terminaali-ikkunassa komento (Python 3.8+):
+```bash
+pip install robotframework-requests --pre
+```
+Ongelmia? Lisätietoja:
+- [RequestsLibrary - Readme](https://github.com/MarketSquare/robotframework-requests#readme)
+
+### 6. Cryptolibraryn asennus
+Asenna CryptoLibrary antamalla komento:
+```bash
+pip install --upgrade robotframework-crypto
+```
+Lisätietoa:
+- [Robot Framework CryptoLibrary | pypi.org](https://pypi.org/project/robotframework-crypto/)
+
+### 7. Robotidyn asennus
+Asenna Robotidy antamalla komento:
+```bash
+pip install robotframework-tidy
+```
+
+### 8. Asennusten testaus
+Tähän Python-koodi, jolla voidaan testata kaikki asennukset.
+
+----
+** TÄSTÄ ETEENPÄIN SIIRRETÄÄN TOISIIN DOKUMENTTEIHIN!!! **
+
+### Browser Libraryn testaaminen
 Tallenna seuraava koodi, esim. tekstitiedostoon `demo1.robot`:
 ```Python
 *** Settings ***
@@ -154,13 +182,7 @@ Lisäksi samasta kansiosta suorituksen jälkeen tulisi löytyä seuraavat tiedos
 
 Lisää esimerkkejä: [examples | robotframework-browser.org](https://robotframework-browser.org/#examples).
 
-### Robotidyn asennus
-Robotidy vaati Python 3.7+ ja Robot Framework 4.0.0+ versiot.
-
-Asenna Robotidy antamalla komento:
-```bash
-pip install robotframework-tidy
-```
+### ROBOTTIDY OHJEET
 Robotidya käytetään antamalla hakemisto tai robot-tiedosto:
 ```bash
 robotidy tests
