@@ -134,9 +134,9 @@ Tarkemmat ohjeet: [Installation | robotframework-browser.org](https://robotframe
 
 ### 5. Requests libraryn asennus
 Anna terminaali-ikkunassa komento:
-    ```bash
-    pip install robotframework-requests
-    ```
+```bash
+pip install robotframework-requests
+```
 Ongelmia? Katso [RequestsLibrary - Readme](https://github.com/MarketSquare/robotframework-requests#readme)
 
 ### 6. Cryptolibraryn asennus
