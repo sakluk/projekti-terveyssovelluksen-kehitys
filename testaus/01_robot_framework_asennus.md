@@ -52,19 +52,20 @@ print('Python:', sys.version)
 Python: 3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)]
 ```
 
-Toinen tapa tarkistaa Python asennus on antaa Python versiokomento VSCoden kautta terminaali (=komentorivi ikkuna).
+Toinen tapa tarkistaa Python asennus on antaa Python versiokomento VSCoden terminaalissa (=komentorivi ikkuna).
+
 5. Avaa VSCoden terminaali-ikkuna (Terminal > New Terminal).
 6. Kirjota terminaaliin komento:  
-**Windows:**
-```bash
-py --version
-```
-**MacOS tai Linux:**
-````bash
-python --version
-```
+    **Windows:**
+    ```bash
+    py --version
+    ```
+    **MacOS tai Linux:**
+    ```bash
+    python --version
+    ```
 Terminaali-ikkunaan tulostuu, esim.
-````bash
+```bash
 Python 3.11.2
 ```
 
@@ -75,18 +76,15 @@ Ongelmia? Katso, esim.
 Seuraavaksi kannattaa tarkistaa, että Python-pakettien asentaja (pip), on päivitetty viimeisimpään versioon. 
 1. Avaa VSCodessa terminaali-ikkuna (View > Terminal).
 2. Anna terminaalissa komento:
-**Windows**  
-```bash
-py -m pip install --upgrade pip
-```
-**MacOS**  
-```bash
-python -m pip install --upgrade pip
-```
-**Linux**  
-```bash
-python -m pip install --upgrade pip
-```
+
+    **Windows:**  
+    ```bash
+    py -m pip install --upgrade pip
+    ```
+    **MacOS tai Linux:**  
+    ```bash
+    python -m pip install --upgrade pip
+    ```
 Ongelmia? Katso, esim.
 - [Installation | pip documentation](https://pip.pypa.io/en/stable/installation/)
 - [Getting started | pip documentation](https://pip.pypa.io/en/stable/getting-started/)
@@ -95,26 +93,24 @@ Ongelmia? Katso, esim.
 Kun Python ja pip on asennettu ja päivitetty, seuraavaksi asennetaan Robot Framework. 
 
 1. Kirjoita VSCoden terminaali-ikkunaan seuraava komento:
-```bash
-pip install robotframework
-```
-Huom! Jos koneesi ei tunnista `pip` komentoa, kirjoita sen sijaan: 
-```bash
-py -m pip install robotframework
-``` 
-Lisätietoa: 
-- [Should I use pip or pip3 | Stackoverflow](https://stackoverflow.com/questions/61664673/should-i-use-pip-or-pip3)
+    ```bash
+    pip install robotframework
+    ```
+    Huom! Jos koneesi ei tunnista `pip` komentoa, kirjoita sen sijaan: 
+    ```bash
+    py -m pip install robotframework
+    ``` 
+Lisätietoa: [Should I use pip or pip3 | Stackoverflow](https://stackoverflow.com/questions/61664673/should-i-use-pip-or-pip3)
 
-Testaa, että asennus on onnistunut antamalla komentorivillä seuraava komento:
-```bash
-robot --version
-```
-Huom! Jos koneesi ei tunnista `robot` komentoa, kokeile:
-```bash
-py -m robot --version
-```
-Lisätietoa:
-- [User Guide | (robotframework.org)](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installing-using-pip)
+2. Testaa, että asennus on onnistunut antamalla komentorivillä seuraava komento:
+    ```bash
+    robot --version
+    ```
+    Huom! Jos koneesi ei tunnista `robot` komentoa, kokeile:
+    ```bash
+    py -m robot --version
+    ```
+Lisätietoa: [User Guide | (robotframework.org)](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installing-using-pip)
 
 ### 4. Browser library asennus
 Browser library tarvitsee toimiakseen sekä Pythonin että Node.JS asennukset. Tarkista ensiksi, että sinulla on molemmat asennettuina.
@@ -123,35 +119,32 @@ Browser library voidaan asentaa joko selainajurien kanssa tai erikseen. Suositel
 
 1. Avaa VSCodessa terminaali-ikkuna.
 2. Asenna Browser library -kirjasto ja selainajurit antamalla komento:
-```bash
-pip install robotframework-browser
-```
+    ```bash
+    pip install robotframework-browser
+    ```
 3. Alusta kirjaston toiminta:
-```bash
-rfbrowser init
-```
-Jos `rfbrowser` komentoa ei löydy, kokeile 
-```bash
-py -m Browser.entry init
-```
-Tarkemmat ohjeet: 
-- [Installation | robotframework-browser.org](https://robotframework-browser.org/#installation)
+    ```bash
+    rfbrowser init
+    ```
+    Jos `rfbrowser` komentoa ei löydy, kokeile 
+    ```bash
+    py -m Browser.entry init
+    ```
+Tarkemmat ohjeet: [Installation | robotframework-browser.org](https://robotframework-browser.org/#installation)
 
 ### 5. Requests libraryn asennus
 Anna terminaali-ikkunassa komento:
-```bash
-pip install robotframework-requests
-```
-Ongelmia? Lisätietoja:
-- [RequestsLibrary - Readme](https://github.com/MarketSquare/robotframework-requests#readme)
+    ```bash
+    pip install robotframework-requests
+    ```
+Ongelmia? Katso [RequestsLibrary - Readme](https://github.com/MarketSquare/robotframework-requests#readme)
 
 ### 6. Cryptolibraryn asennus
 Asenna CryptoLibrary antamalla komento:
 ```bash
 pip install --upgrade robotframework-crypto
 ```
-Lisätietoa:
-- [Robot Framework CryptoLibrary | pypi.org](https://pypi.org/project/robotframework-crypto/)
+Lisätietoa: [Robot Framework CryptoLibrary | pypi.org](https://pypi.org/project/robotframework-crypto/)
 
 ### 7. Robotidyn asennus
 Asenna Robotidy antamalla komento:
