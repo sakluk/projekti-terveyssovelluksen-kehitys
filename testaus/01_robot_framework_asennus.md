@@ -11,21 +11,19 @@ Tulemme käyttämään kurssilla seuraavia työkaluja:
 - [CryptoLibrary](https://pypi.org/project/robotframework-crypto/) - Python-lisäkirjasto salasanojen turvalliseen käsittelyyn.
 - [Robotidy](https://robotidy.readthedocs.io/en/stable/index.html) - työkalu, joka automaattisesti muotoilee Robot Framework koodit.
 
-**Huom!** Verkkosovellusten testaamisessa käytetään usein [SeleniumLibrarya](https://robotframework.org/SeleniumLibrary/). Se on vanhempi lisäkirjasto kuin `Browser Library` ja siihen löytyy erittäin hyvin esimerkkejä. `SeleniumLibraryn` asentamisen jälkeen on vielä asennettava selain- ja käyttöjärjestelmäkohtaiset [selainohjaimet](https://robotframework.org/SeleniumLibrary/#browser-drivers) selaimille. Päälisätyökalu verkkosovelluksen käyttöliittymän testaamiseen tällä kurssilla on kuitenkin `Browser Library`.
+**Huom!** Robot Frameworkin kanssa verkkosovellusten testaamisessa käytetään usein [SeleniumLibrarya](https://robotframework.org/SeleniumLibrary/). Se on vanhempi lisäkirjasto kuin `Browser Library` ja siihen löytyy erittäin hyvin esimerkkejä. Käytämme kuitenkin tällä kurssilla `Browser Librarya`. Jos tahdot kokeilla `SeleniumLibrarya`, asentamisen jälkeen on vielä asennettava selain- ja käyttöjärjestelmäkohtaiset [selainohjaimet](https://robotframework.org/SeleniumLibrary/#browser-drivers) selaimille. 
 
-**Huom 2!** Kolmas verkkosovellusten testaamiseen soveltuva lisätyökalu on [QWeb](https://pypi.org/project/QWeb/). Sitä käytetään SeleniumLibraryn kanssa. QWeb vaatii toimiakseen Python version väliltä 3.8-3.11.
+**Huom!** Kolmas verkkosovellusten testaamiseen soveltuva lisätyökalu on [QWeb](https://pypi.org/project/QWeb/). Sitä käytetään SeleniumLibraryn kanssa. QWeb vaatii toimiakseen Python version väliltä 3.8-3.11.
 
 ## Asennusohjeet
 
-Seuraavissa ohjeissa oletetaan, että käytät sovelluskehitykseen [Visual Studio Codea](https://code.visualstudio.com/) (VSCode). Tehtävät suoritetaan käyttäen VSCoden käyttöliittymää ja työkaluja. Jos käytät sovelluskehitykseen esim. [JetBrains IDE](https://www.jetbrains.com/ides/) (mm. PyCharm), joudut soveltamaan ohjeita ympäristön mukaan.
+Seuraavissa ohjeissa oletetaan, että käytät sovelluskehitykseen [Visual Studio Codea](https://code.visualstudio.com/) (VSCode). Tehtävät suoritetaan käyttäen VSCoden käyttöliittymää, työkaluja ja VSCoden terminaali-ikkunaa. Jos käytät sovelluskehitykseen esim. [JetBrains IDE](https://www.jetbrains.com/ides/) (mm. PyCharm), joudut soveltamaan ohjeita ympäristön mukaan.
 
-Samoin oletetaan, että olet aiemmassa jaksossa suorittanut Web-sovelluskehitys-kurssin, käytössäsi on terveyspäiväkirja-web-sovelluksen koodit sekä Github-kansio. 
-
-Tavoitteena on, että oheinen asennus ja testit suoritetaan omalle terveyspäiväkirja-web-sovellukselle.
+Samoin oletetaan, että olet aiemmassa jaksossa suorittanut Web-sovelluskehitys-kurssin, käytössäsi on terveyspäiväkirja-web-sovelluksen koodit sekä Github-kansio. Tavoitteena on, että oheinen asennus ja testit suoritetaan omalle terveyspäiväkirja-web-sovellukselle ja käyttäen sovelluksen projektihakemistoa.
 
 ### 1. Avaa projekti ja luo testaus-kansio
 
-1. Avaa projektikansiosi (File > Open Folder) VSCodessa.
+1. Avaa sovelluksesi projektikansio (File > Open Folder) VSCodessa.
 2. Lisää projektin juurihakemistoon alihakemisto nimeltä: `testaus`.
 3. Lisää `testaus` hakemiston alle kaksi alihakemistoa: `gui` ja `server`. 
 
@@ -53,6 +51,23 @@ print('Python:', sys.version)
 ```
 Python: 3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)]
 ```
+
+Toinen tapa tarkistaa Python asennus on antaa Python versiokomento VSCoden kautta terminaali (=komentorivi ikkuna).
+5. Avaa VSCoden terminaali-ikkuna (Terminal > New Terminal).
+6. Kirjota terminaaliin komento:  
+**Windows:**
+```bash
+py --version
+```
+**MacOS tai Linux:**
+````bash
+python --version
+```
+Terminaali-ikkunaan tulostuu, esim.
+````bash
+Python 3.11.2
+```
+
 Ongelmia? Katso, esim.
 - [Python Tutorial | VSCode docs](https://code.visualstudio.com/docs/python/python-tutorial)
 
