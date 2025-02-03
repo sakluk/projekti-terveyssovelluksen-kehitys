@@ -11,7 +11,10 @@ Tulemme käyttämään kurssilla seuraavia työkaluja:
 - [CryptoLibrary](https://pypi.org/project/robotframework-crypto/) - Python-lisäkirjasto salasanojen turvalliseen käsittelyyn.
 - [Robotidy](https://robotidy.readthedocs.io/en/stable/index.html) - työkalu, joka automaattisesti muotoilee Robot Framework koodit.
 
-**Huom!** Robot Frameworkin kanssa verkkosovellusten testaamisessa käytetään usein [SeleniumLibrarya](https://robotframework.org/SeleniumLibrary/). Se on vanhempi lisäkirjasto kuin `Browser Library` ja siihen löytyy erittäin hyvin esimerkkejä. Käytämme kuitenkin tällä kurssilla `Browser Librarya`. Jos tahdot kokeilla `SeleniumLibrarya`, asentamisen jälkeen on vielä asennettava selain- ja käyttöjärjestelmäkohtaiset [selainohjaimet](https://robotframework.org/SeleniumLibrary/#browser-drivers) selaimille. 
+-----
+**Huom!** 
+
+Robot Frameworkin kanssa verkkosovellusten testaamisessa käytetään usein [SeleniumLibrarya](https://robotframework.org/SeleniumLibrary/). Se on vanhempi lisäkirjasto kuin `BrowserLibrary` ja siihen löytyy erittäin hyvin esimerkkejä. Käytämme kuitenkin tällä kurssilla `BrowserLibrarya`. Jos tahdot kokeilla `SeleniumLibrarya`, asentamisen jälkeen on vielä asennettava selain- ja käyttöjärjestelmäkohtaiset [selainohjaimet](https://robotframework.org/SeleniumLibrary/#browser-drivers) selaimille. 
 
 ## Asennusohjeet
 
@@ -21,11 +24,11 @@ Samoin oletetaan, että olet aiemmassa jaksossa suorittanut Web-sovelluskehitys-
 
 ### 1. Avaa projekti ja luo testaus-kansio
 
-1. Avaa sovelluksesi projektikansio (File > Open Folder) VSCodessa.
+1. Avaa VSCodessa oman sovelluksesi projektikansio (File > Open Folder).
 2. Lisää projektin juurihakemistoon alihakemisto nimeltä: `tests`.
 3. Lisää `testaus` hakemiston alle kaksi alihakemistoa: `front` ja `back`. 
 
-Näitä uusia kansioita käytetään ohjelmistotestauksen opetteluun. Myöhemmin tulette ryhmänne kanssa tekemään samanlaisen kansiorakenteen omalle terveyssovelluksellenne. Projektin kansiorakenne tulee näyttää esim. seuraavanlaiselta:
+Näitä uusia kansioita käytetään ohjelmistotestauksen opetteluun. Myöhemmin tulette ryhmänne kanssa tekemään samanlaisen kansiorakenteen omalle terveyssovelluksellenne. Projektin kansiorakenne tulee näyttämään esim. seuraavanlaiselta:
 ```
 oman-projektin-nimi
    > Frontend
@@ -38,9 +41,8 @@ oman-projektin-nimi
 ### 2. Python-testi
 Testaa ensiksi, että Python-asennus on kunnossa.
 
-1. VSCodessa valitse `test` -kansio.
-2. Avaa terminaali-ikkuna (CTRL+ö).
-3. Anna terminaalissa komento:
+1. Avaa terminaali-ikkuna (CTRL+ö).
+2. Anna terminaalissa komento:
 ```bash
 python --version
 ```
@@ -51,33 +53,18 @@ Python: 3.11.2
 Ongelmia? Katso, esim.
 - [Python Tutorial | VSCode docs](https://code.visualstudio.com/docs/python/python-tutorial)
 
-### 3. pip päivitys
-Seuraavaksi kannattaa tarkistaa, että Python-pakettien asentaja (pip), on päivitetty viimeisimpään versioon. 
-1. Avaa VSCodessa terminaali-ikkuna (View > Terminal).
-2. Anna terminaalissa komento:
-```bash
-python -m pip install --upgrade pip
-```
-Ongelmia? Katso, esim.
-- [Installation | pip documentation](https://pip.pypa.io/en/stable/installation/)
-- [Getting started | pip documentation](https://pip.pypa.io/en/stable/getting-started/)
-
-### 4. Virtuaaliympäristön asennus
+### 3. Virtuaaliympäristön luominen
 
 Python-virtuaaliympäristö auttaa pitämään projektin riippuvuudet erillään muista projekteista. Näin voit helposti hallita ja päivittää projektin riippuvuksia ilman, että se vaikuttaa muihin projekteihin. Virtuaaliympäristö luodaan seuraavasti:
 
-1. Avaa VSCodess terminaali-ikkuna (CTRL+ö tai View > Terminal).
-2. Navigoi projektikansioon, esim. 
-```bash
-cd projektikansion_nimi
-```
-3. Aja seuraava komento:
+1. Jatka terminaali-ikkunan käyttöä (CTRL+ö tai View > Terminal).
+2. Aja seuraava komento:
 ```bash
 python -m venv .venv
 ```
 Tämä luo uuden hakemiston nimeltä `.venv`, joka sisältää virtuaaliympräistön.
 
-4. Aktivoi virtuaaliympäristö antamalla komento
+3. Aktivoi virtuaaliympäristö antamalla komento
 - Windows:
 ```bash
 .venv\Scripts\activate
@@ -90,12 +77,22 @@ Kun virtuaaliympäristö on aktivoitu, terminaalin prompt muuttuu ja näyttää,
 
 Voit nyt asentaa projektin riippuvuudet virtuaaliympäristön sisälle.
 
-### 5. Virtuaaliympäristön lisääminen .gitignore -tiedostoon
+### 34 Virtuaaliympäristön lisääminen .gitignore -tiedostoon
 Jotta virtuaaliympäristön tiedostot eivät kopioituisi GitHub-kansioon, lisää `.gitignore` -tiedostoon seuraava rivi:
 ```bash
-**/.venv
+# Lisätään .venv hakemisto .gitignoreen
+.venv
 ```
-Tämä estää virtuaaliympäristön muutosten kopioinnin, kun julkaiset uuden version koodeistasi GitHubissa.
+Tämä estää virtuaaliympäristön kopioinnin, kun julkaiset uuden version koodeistasi GitHubissa.
+
+### 5. pip päivitys
+Seuraavaksi kannattaa tarkistaa, että Python-pakettien asentaja (pip), on päivitetty viimeisimpään versioon. Anna terminaalissa komento:
+```bash
+python -m pip install --upgrade pip
+```
+Ongelmia? Katso, esim.
+- [Installation | pip documentation](https://pip.pypa.io/en/stable/installation/)
+- [Getting started | pip documentation](https://pip.pypa.io/en/stable/getting-started/)
 
 ### 6. Robot Framework asennus
 Kun Python ja pip on asennettu ja päivitetty sekä olet luonut virtuaaliympäristön, seuraavaksi asennetaan Robot Framework. 
@@ -121,7 +118,10 @@ Lisätietoa: [Should I use pip or pip3 | Stackoverflow](https://stackoverflow.co
 Lisätietoa: [User Guide | (robotframework.org)](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installing-using-pip)
 
 ### 7. Browser library asennus
-**Huom!** Browser library tarvitsee toimiakseen sekä Pythonin että **Node.JS** asennukset. Tarkista ensiksi, että sinulla on molemmat asennettuina.
+**Huom!** Browser library tarvitsee toimiakseen sekä Pythonin että **Node.JS** asennukset. Tarkista ensiksi, että sinulla on molemmat asennettuina. Anna terminaali-ikkunassa komento:
+```bash
+node -v
+```
 
 Browser library voidaan asentaa joko selainajurien kanssa tai erikseen. Suositeltavaa on asentaa selainajureiden kanssa. Ohessa on ohjeet kuinka voit Browser library asennetaan selainajurien kanssa.
 
@@ -159,6 +159,7 @@ Asenna Robotidy antamalla komento:
 ```bash
 pip install robotframework-tidy
 ```
+Lisätietoa: [Robotidy documentation](https://robotidy.readthedocs.io/en/stable/index.html)
 
 ### 11. Asennuslistan tarkistus
 `pip freeze`on komento, joka listaa kaikki nykyisessä Python-ympäristössä asennetut paketit ja niiden versiot. Anna terminaalissa komento:
@@ -197,4 +198,3 @@ Browser: 19.3.0
 requests: 2.32.3
 CryptoLibrary: 0.4.2
 ```
-
