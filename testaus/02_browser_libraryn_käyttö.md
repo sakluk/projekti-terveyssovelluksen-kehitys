@@ -1,4 +1,4 @@
-# 04. Browser libraryn käyttö
+# 02. Browser libraryn käyttö
 
 ## Tausta ja tavoite
 Tämän ohjeen tarkoitus on esitellä perusesimerkki, kuinka ottaa yhteys verkkosovellukseen ja käyttää resurssitiedostoja piilottamaan kirjautumissalasana. Tämä esimerkki on jatkokehitetty versio [Browser Libraryn 3. esimerkistä](https://robotframework-browser.org/#examples). Esimerkissä käytetään `Type Secret` avainsanaa piilotettujen käyttäjätietojen syöttämiseen verkkosivulle. Lisäksi opetuksillisista syistä selainikkuna jätetään testin jälkeen auki ja tietojen syöttämiseen on lisätty viiveitä, joita normaaleissa verkkosovellustesteissä ei tarvita. 
@@ -7,7 +7,6 @@ Esimerkissä käytetään testisivua: https://www.selenium.dev/selenium/web/web-
 
 ![Selenium Web Form Example](./kuvat/selenium_web_form.png)<br>
 *Kuva 1. Verkkolomake, jota käytetään oheisessa esimerkissä.*
-
 
 
 ## Keyword - tiedosto
@@ -61,30 +60,56 @@ robot browser_demo.robot
 
 ## Esimerkki Moodle-kirjautuminen
 
-Huom! Oheisessa esimerkissä oletetaan, että kirjautumiskentät (username, password) löytyvät heti pääsivulta. Oma sovelluksesi voi vaatia ensiksi jonkin elementin valitsemista. Esimerkiksi [moodle.metropolia.fi](https://moodle.metropolia.fi) sivulla pitää ensiksi valita "Kirjaudu" -linkki, jonka jälkeen pääsee vasta kirjautumaan sisään palveluun. Tällöin koodiin pitää lisätä linkin valinta.
+Joskus kirjautumisprosessi voi olla monivaiheinen. Esimerkiksi [moodle.metropolia.fi](https://moodle.metropolia.fi)-sivulla pitää ensiksi valita "Kirjaudu" -linkki, jonka jälkeen pääsee valitsemaan kirjautumistavan (Metropolia, Haka tunnus, Paikallinen tunnus). Vasta tämän jälkeen aukeaa kirjautumissivu. Kirjautumissivulla on oletuskirjautumiskentät (username, password), joihin syötetään käyttäjänimi ja salasana. Nämä on tallennettu ``Keywords.robot`-tiedostoon. Oman sovelluksesi kirjautumissivu voi vaatia ensiksi jonkin elementin valitsemista. 
 
 ![Moodle etusivu ja Kirjaudu nappula](./kuvat/moodle_aloitussivu.png)<br>
 *Kuva 2. Moodlen etusivun oikeassa ylänurkasta löytyy linkki: Kirjaudu.*
 
+Tässä esimerkkikoodi [moodle.robot](./robot/moodle.robot). Huomaa, että esimerkissä on käytetty `Click with Options` hidastamaan toimintaa, jotta näet mitä eri sivuilla tapahtuu. Omissa testeissäsi voit poistaa nämä hidasteet ja käyttää suoraan `Click`-avainsanaa.
 
 ```robotframework
+*** Settings ***
+Library     Browser    auto_closing_level=KEEP
+Resource    Keywords.robot
+
 *** Test Cases ***
-Test Web Form
-    New Browser    chromium    headless=No  
-    New Page       https://moodle.metropolia.fi 
-    Get Title      ==    "Etusivu | Moodle"  
-    Click          text = "Kirjaudu"
-    ....
+Login to Moodle
+    New Browser    chromium    headless=No
+    New Page    https://moodle.metropolia.fi
+
+    # Hae sivun otsikko ja tarkista, että se on odotettu
+    ${PageTitle}=  Get Title 
+    Should Be Equal As Strings    ${PageTitle}    Etusivu | Moodle 
+    
+    # Hae elementti kirjautumispainikkeelle ja napsauta sitä
+    ${kirjaudu}=    Get Element    xpath=(//a[@href='https://moodle.metropolia.fi/login/index.php' and text()='Kirjaudu'])[1]
+    Click with Options    ${kirjaudu}    delay=3 s
+
+    # Etsi elementti <div class="text_to_html">Metropolia</div> perusteella
+    ${metropolia}=    Get Element    xpath=//div[@class='text_to_html' and text()='Metropolia']
+    Click with Options    ${metropolia}    delay=3 s
+
+    # Kirjoita käyttäjätunnus ja salasana
+    Type Text    id=username    ${Username}     # Huom: ${Username} on muuttuja tiedostosta Keywords.robot
+    Type Secret  id=password    $Password       # Huom: $Password on muuttuja tiedostosta Keywords.robot
+    
+    # Seuraavaksi olisi kirjautumispainikkeen napsauttaminen
+     Click with Options   "Login"   delay= 5 s     # Tämä epäonnistuu, mutta se on ok, koska meillä ei ole oikeaa Moodle-tiliä
 ```
 
-## Lisätietoa avainsanoista
-- [Importing](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Importing)
-- [Browser, Context and Page](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Browser%2C%20Context%20and%20Page)
-- [Get Title](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Get%20Title)
--  [Fill Text](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Fill%20Text)
--  [Type Text](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Type%20Text)
--  [Fill Secret](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Fill%20Secret)
--  [Type Secret](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=PageContent#Type%20Secret)
--  [Click](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Click)
--  [Click With Options](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Click%20With%20Options)
+## Lisätietoa
+- [Browser library homepage](https://robotframework-browser.org/)
+- [Browser library at GitHub](https://github.com/MarketSquare/robotframework-browser)
+
+### Avainsanoja
+- [Keywords documentation](https://marketsquare.github.io/robotframework-browser/Browser.html)
+  - [Importing](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Importing)
+  - [Browser, Context and Page](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Browser%2C%20Context%20and%20Page)
+  - [Get Title](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Get%20Title)
+  -  [Fill Text](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Fill%20Text)
+  -  [Type Text](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Type%20Text)
+  -  [Fill Secret](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Fill%20Secret)
+  -  [Type Secret](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=PageContent#Type%20Secret)
+  -  [Click](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Click)
+  -  [Click With Options](https://marketsquare.github.io/robotframework-browser/Browser.html?tag=BrowserControl#Click%20With%20Options)
 
