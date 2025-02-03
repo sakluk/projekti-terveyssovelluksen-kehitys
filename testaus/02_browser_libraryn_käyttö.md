@@ -1,4 +1,4 @@
-# 04. Browser library esimerkki
+# 04. Browser libraryn käyttö
 
 ## Tausta ja tavoite
 Tämän ohjeen tarkoitus on esitellä perusesimerkki, kuinka ottaa yhteys verkkosovellukseen ja käyttää resurssitiedostoja piilottamaan kirjautumissalasana. Tämä esimerkki on jatkokehitetty versio [Browser Libraryn 3. esimerkistä](https://robotframework-browser.org/#examples). Esimerkissä käytetään `Type Secret` avainsanaa piilotettujen käyttäjätietojen syöttämiseen verkkosivulle. Lisäksi opetuksillisista syistä selainikkuna jätetään testin jälkeen auki ja tietojen syöttämiseen on lisätty viiveitä, joita normaaleissa verkkosovellustesteissä ei tarvita. 
@@ -59,8 +59,7 @@ Aja testi antamalla terminaalissa komento
 robot browser_demo.robot
 ```
 
-## Tehtävä
-Sovella oheista esimerkkiä ja tee samanlainen testi omalle sovelluksellesi.
+## Esimerkki Moodle-kirjautuminen
 
 Huom! Oheisessa esimerkissä oletetaan, että kirjautumiskentät (username, password) löytyvät heti pääsivulta. Oma sovelluksesi voi vaatia ensiksi jonkin elementin valitsemista. Esimerkiksi [moodle.metropolia.fi](https://moodle.metropolia.fi) sivulla pitää ensiksi valita "Kirjaudu" -linkki, jonka jälkeen pääsee vasta kirjautumaan sisään palveluun. Tällöin koodiin pitää lisätä linkin valinta.
 
