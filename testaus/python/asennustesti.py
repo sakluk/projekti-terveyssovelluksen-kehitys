@@ -1,8 +1,10 @@
-# asennustesti.py
-#
-# Tämä on asennustesti, joka tulostaa Pythonin, Robot Frameworkin ja 
-# muiden käytettyjen kirjastojen versiot. Tämä tiedosto on tarkoitettu
-# käytettäväksi testattaessa, että kaikki tarvittavat kirjastot on asennettu.
+"""
+asennustesti.py
+---------------
+Tämä on asennustesti, joka tulostaa Pythonin, Robot Frameworkin ja 
+muiden käytettyjen kirjastojen versiot. Tämä tiedosto on tarkoitettu
+käytettäväksi testattaessa, että kaikki tarvittavat kirjastot on asennettu.
+"""
 
 # Tulostetaan Pythonin versio
 import sys
@@ -23,7 +25,7 @@ except ImportError:
     print('Browser-moduulia ei löydy')
 
 try:
-    import RequestsLibrary
+    # RequestsLibrary on saatavilla Pythonsissa nimellä requests
     import requests
     print('requests:', requests.__version__)
 except ImportError:
@@ -34,4 +36,3 @@ try:
     print('CryptoLibrary:', CryptoLibrary.__version__)
 except ImportError:
     print('CryptoLibrary-moduulia ei löydy')
- 

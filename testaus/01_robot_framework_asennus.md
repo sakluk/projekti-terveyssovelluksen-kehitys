@@ -13,8 +13,6 @@ Tulemme käyttämään kurssilla seuraavia työkaluja:
 
 **Huom!** Robot Frameworkin kanssa verkkosovellusten testaamisessa käytetään usein [SeleniumLibrarya](https://robotframework.org/SeleniumLibrary/). Se on vanhempi lisäkirjasto kuin `Browser Library` ja siihen löytyy erittäin hyvin esimerkkejä. Käytämme kuitenkin tällä kurssilla `Browser Librarya`. Jos tahdot kokeilla `SeleniumLibrarya`, asentamisen jälkeen on vielä asennettava selain- ja käyttöjärjestelmäkohtaiset [selainohjaimet](https://robotframework.org/SeleniumLibrary/#browser-drivers) selaimille. 
 
-**Huom!** Kolmas verkkosovellusten testaamiseen soveltuva lisätyökalu on [QWeb](https://pypi.org/project/QWeb/). Sitä käytetään SeleniumLibraryn kanssa. QWeb vaatii toimiakseen Python version väliltä 3.8-3.11.
-
 ## Asennusohjeet
 
 Seuraavissa ohjeissa oletetaan, että käytät sovelluskehitykseen [Visual Studio Codea](https://code.visualstudio.com/) (VSCode). Tehtävät suoritetaan käyttäen VSCoden käyttöliittymää, työkaluja ja VSCoden terminaali-ikkunaa. Jos käytät sovelluskehitykseen esim. [JetBrains IDE](https://www.jetbrains.com/ides/) (mm. PyCharm), joudut soveltamaan ohjeita ympäristön mukaan.
@@ -24,51 +22,32 @@ Samoin oletetaan, että olet aiemmassa jaksossa suorittanut Web-sovelluskehitys-
 ### 1. Avaa projekti ja luo testaus-kansio
 
 1. Avaa sovelluksesi projektikansio (File > Open Folder) VSCodessa.
-2. Lisää projektin juurihakemistoon alihakemisto nimeltä: `testaus`.
-3. Lisää `testaus` hakemiston alle kaksi alihakemistoa: `gui` ja `server`. 
+2. Lisää projektin juurihakemistoon alihakemisto nimeltä: `tests`.
+3. Lisää `testaus` hakemiston alle kaksi alihakemistoa: `front` ja `back`. 
 
-Näitä uusia kansioita käytetään ohjelmistotestauksen opetteluun. Myöhemmin tulette ryhmänne kanssa tekemään samanlaisen kansiorakenteen omalle terveyssovelluksellenne. Projektin kansiorakenne tulee näyttää seuraavanlaiselta:
+Näitä uusia kansioita käytetään ohjelmistotestauksen opetteluun. Myöhemmin tulette ryhmänne kanssa tekemään samanlaisen kansiorakenteen omalle terveyssovelluksellenne. Projektin kansiorakenne tulee näyttää esim. seuraavanlaiselta:
 ```
 oman-projektin-nimi
-   > front
-   > back
-   > testaus
-      > gui
-      > server
+   > Frontend
+   > Backend
+   > tests
+      > front
+      > back
 ``` 
 
 ### 2. Python-testi
 Testaa ensiksi, että Python-asennus on kunnossa.
 
-1. VSCodessa valitse `testaus` -kansio.
-2. Luo uusi Python-kooditiedosto nimeltä: `asennustesti.py`.
-3. Kirjoita tiedostoon seuraava koodi:
-```python
-import sys
-print('Python:', sys.version)
-```
-4. Suorita koodi. Terminaalissa pitäisi tuloksena näkyä, esim.
-```
-Python: 3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)]
-```
-
-Toinen tapa tarkistaa Python asennus on antaa Python versiokomento VSCoden terminaalissa (=komentorivi ikkuna).
-
-5. Avaa VSCoden terminaali-ikkuna (Terminal > New Terminal).
-6. Kirjota terminaaliin komento:  
-    **Windows:**
-    ```bash
-    py --version
-    ```
-    **MacOS tai Linux:**
-    ```bash
-    python --version
-    ```
-Terminaali-ikkunaan tulostuu, esim.
+1. VSCodessa valitse `test` -kansio.
+2. Avaa terminaali-ikkuna (CTRL+ö).
+3. Anna terminaalissa komento:
 ```bash
-Python 3.11.2
+python --version
 ```
-
+Terminaalissa pitäisi tuloksena näkyä, esim.
+```bash
+Python: 3.11.2
+```
 Ongelmia? Katso, esim.
 - [Python Tutorial | VSCode docs](https://code.visualstudio.com/docs/python/python-tutorial)
 
@@ -76,21 +55,50 @@ Ongelmia? Katso, esim.
 Seuraavaksi kannattaa tarkistaa, että Python-pakettien asentaja (pip), on päivitetty viimeisimpään versioon. 
 1. Avaa VSCodessa terminaali-ikkuna (View > Terminal).
 2. Anna terminaalissa komento:
-
-    **Windows:**  
-    ```bash
-    py -m pip install --upgrade pip
-    ```
-    **MacOS tai Linux:**  
-    ```bash
-    python -m pip install --upgrade pip
-    ```
+```bash
+python -m pip install --upgrade pip
+```
 Ongelmia? Katso, esim.
 - [Installation | pip documentation](https://pip.pypa.io/en/stable/installation/)
 - [Getting started | pip documentation](https://pip.pypa.io/en/stable/getting-started/)
 
-### 3. Robot Framework asennus
-Kun Python ja pip on asennettu ja päivitetty, seuraavaksi asennetaan Robot Framework. 
+### 4. Virtuaaliympäristön asennus
+
+Python-virtuaaliympäristö auttaa pitämään projektin riippuvuudet erillään muista projekteista. Näin voit helposti hallita ja päivittää projektin riippuvuksia ilman, että se vaikuttaa muihin projekteihin. Virtuaaliympäristö luodaan seuraavasti:
+
+1. Avaa VSCodess terminaali-ikkuna (CTRL+ö tai View > Terminal).
+2. Navigoi projektikansioon, esim. 
+```bash
+cd projektikansion_nimi
+```
+3. Aja seuraava komento:
+```bash
+python -m venv .venv
+```
+Tämä luo uuden hakemiston nimeltä `.venv`, joka sisältää virtuaaliympräistön.
+
+4. Aktivoi virtuaaliympäristö antamalla komento
+- Windows:
+```bash
+.venv\Scripts\activate
+```
+- macOS tai Linux:
+```bash
+source myenv/bin/activate
+```
+Kun virtuaaliympäristö on aktivoitu, terminaalin prompt muuttuu ja näyttää, että työskentelet nyt virtuaaliympäristössä.
+
+Voit nyt asentaa projektin riippuvuudet virtuaaliympäristön sisälle.
+
+### 5. Virtuaaliympäristön lisääminen .gitignore -tiedostoon
+Jotta virtuaaliympäristön tiedostot eivät kopioituisi GitHub-kansioon, lisää `.gitignore` -tiedostoon seuraava rivi:
+```bash
+**/.venv
+```
+Tämä estää virtuaaliympäristön muutosten kopioinnin, kun julkaiset uuden version koodeistasi GitHubissa.
+
+### 6. Robot Framework asennus
+Kun Python ja pip on asennettu ja päivitetty sekä olet luonut virtuaaliympäristön, seuraavaksi asennetaan Robot Framework. 
 
 1. Kirjoita VSCoden terminaali-ikkunaan seuraava komento:
     ```bash
@@ -98,7 +106,7 @@ Kun Python ja pip on asennettu ja päivitetty, seuraavaksi asennetaan Robot Fram
     ```
     Huom! Jos koneesi ei tunnista `pip` komentoa, kirjoita sen sijaan: 
     ```bash
-    py -m pip install robotframework
+    python -m pip install robotframework
     ``` 
 Lisätietoa: [Should I use pip or pip3 | Stackoverflow](https://stackoverflow.com/questions/61664673/should-i-use-pip-or-pip3)
 
@@ -108,12 +116,12 @@ Lisätietoa: [Should I use pip or pip3 | Stackoverflow](https://stackoverflow.co
     ```
     Huom! Jos koneesi ei tunnista `robot` komentoa, kokeile:
     ```bash
-    py -m robot --version
+    python -m robot --version
     ```
 Lisätietoa: [User Guide | (robotframework.org)](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installing-using-pip)
 
-### 4. Browser library asennus
-Browser library tarvitsee toimiakseen sekä Pythonin että Node.JS asennukset. Tarkista ensiksi, että sinulla on molemmat asennettuina.
+### 7. Browser library asennus
+**Huom!** Browser library tarvitsee toimiakseen sekä Pythonin että **Node.JS** asennukset. Tarkista ensiksi, että sinulla on molemmat asennettuina.
 
 Browser library voidaan asentaa joko selainajurien kanssa tai erikseen. Suositeltavaa on asentaa selainajureiden kanssa. Ohessa on ohjeet kuinka voit Browser library asennetaan selainajurien kanssa.
 
@@ -128,52 +136,65 @@ Browser library voidaan asentaa joko selainajurien kanssa tai erikseen. Suositel
     ```
     Jos `rfbrowser` komentoa ei löydy, kokeile 
     ```bash
-    py -m Browser.entry init
+    python -m Browser.entry init
     ```
 Tarkemmat ohjeet: [Installation | robotframework-browser.org](https://robotframework-browser.org/#installation)
 
-### 5. Requests libraryn asennus
+### 8. Requests libraryn asennus
 Anna terminaali-ikkunassa komento:
 ```bash
 pip install robotframework-requests
 ```
 Ongelmia? Katso [RequestsLibrary - Readme](https://github.com/MarketSquare/robotframework-requests#readme)
 
-### 6. Cryptolibraryn asennus
+### 9. Cryptolibraryn asennus
 Asenna CryptoLibrary antamalla komento:
 ```bash
 pip install --upgrade robotframework-crypto
 ```
 Lisätietoa: [Robot Framework CryptoLibrary | pypi.org](https://pypi.org/project/robotframework-crypto/)
 
-### 7. Robotidyn asennus
+### 10. Robotidyn asennus
 Asenna Robotidy antamalla komento:
 ```bash
 pip install robotframework-tidy
 ```
 
-### 8. Asennuslistan tarkistus
-Anna terminaalissa komento:
+### 11. Asennuslistan tarkistus
+`pip freeze`on komento, joka listaa kaikki nykyisessä Python-ympäristössä asennetut paketit ja niiden versiot. Anna terminaalissa komento:
 ```bash
-pip list
+pip freeze
 ```
-Tarkista, että listasta löytyvät seuraavat modulit:
+Tarkista, että listasta löytyvät seuraavat modulit (**Huom. versionumerot voivat olla uudemmat**):
 ```
-robotframework                  7.0
-robotframework-browser          18.2.0
-robotframework-crypto           0.3.0
-robotframework-requests         0.9.6
-robotframework-tidy             4.11.0
+...
+robotframework==7.2
+robotframework-assertion-engine==3.0.3
+robotframework-browser==19.3.0
+robotframework-crypto==0.4.2
+robotframework-pythonlibcore==4.4.1
+robotframework-requests==0.9.7
+robotframework-tidy==4.16.0         
+...
 ```
-Huom. Versionumerot saattavat olla eri.
 
-### 9. Asennusten testaus
-Kopioi [asennustesti.py](asennustesti.py) tiedosto `testaus`-kansioon ja aja se. Jos asennukset ovat kunnossa, tuloksena terminaali-ikkunaan tulostuu, esim.
+### 12. Luo `requirements.txt`-asennuslista
+Voit myös ohjata `pip freeze`-komennon luettelon tiedostoon käyttämällä uudelleenohjausta:
+```bash
+pip freeze > requirements.txt
 ```
-Python: 3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)]
-Robot Framework: 7.0
-Browser: 18.2.0
-requests: 2.31.0
-CryptoLibrary: 0.3.0
+Tämä luo `requirements.txt`-tiedoston, joka sisältää kaikki nykyisessä ympäristössä asennetut paketit ja niiden versiot. Tämän tiedoston avulla voit asentaa samata paketit toisessa ympäristössä käyttämällä seuraavaa komentoa:
+```bash
+pip install -r requirements.txt
+```
+
+
+### 13. Asennusten testaus
+Kopioi [asennustesti.py](./python/asennustesti.py) tiedosto `testaus`-kansioon ja aja se. Jos asennukset ovat kunnossa, tuloksena terminaali-ikkunaan tulostuu, esim.
+```
+Robot Framework: 7.2
+Browser: 19.3.0
+requests: 2.32.3
+CryptoLibrary: 0.4.2
 ```
 
