@@ -1,4 +1,4 @@
-# 01. Robot Frameworkin ja lisäosien asennukset
+# 01. Asennukset
 
 ## Tavoite
 Tavoitteena on asentaa projektissa käytettävä Robot Framework automaatiotestaustyökalu ja sen lisäosat.

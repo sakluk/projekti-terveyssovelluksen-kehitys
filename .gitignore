@@ -3,3 +3,5 @@
 *.html
 *.xml
 *.png
+.env
+**/__pycache__

@@ -1,6 +1,59 @@
-# 07. CryptoLibrary
+# 03. Tietojen salaus ja piilottaminen
 
-## Johdanto
+Salasanoja ei pidä koskaan kirjoittaa testeihin suoraan seuraavista syistä:
+
+1. Salasanojen kirjoittaminen suoraan koodiin tekee niistä helposti saatavilla olevia kaikille, joilla on pääsy kooditiedostoihin. Tämä lisää riskiä, että salasanat vuotavat ja joutuvat vääriin käsiin.
+
+2. Jos salasanat ovat suoraan koodissa, ne tallentuvat versionhallintajärjestelmään (esim. Git). Tämä tarkoittaa, että kaikki, joilla on pääsy versionhallintaan, voivat nähdä salasanat, ja ne voivat myös jäädä historiaan, vaikka ne poistettaisiin myöhemmin koodista.
+
+3. Salasanojen muuttaminen on vaikeampaa, jos ne on kovakoodattu useisiin tiedostoihin. Yhden keskitetyn `.env`-tiedoston käyttäminen helpottaa salasanojen hallintaa ja päivittämistä.
+
+4.  Eri ympäristöissä (kehitys, testaus, tuotanto) käytetään usein eri salasanoja. `.env`-tiedostojen avulla voit helposti määrittää ympäristökohtaiset asetukset ilman, että sinun tarvitsee muuttaa koodia.
+
+## `.env`-tiedoston käyttö
+
+Käyttämällä `.env`-tiedostoa salasanojen piilottamiseen voit varmistaa, että salasanat pysyvät turvassa ja hallittavissa. `.env`-tiedostoja ei tulisi koskaan lisätä versionhallintaan, vaan ne tulisi pitää paikallisina ja suojattuina. Tässä on esimerkki `.env`-tiedoston käytöstä Robot Framework testauksessa.
+
+
+1. Luo .env-tiedosto ja lisää siihen salasanat ja muut luottamukselliset tiedot:
+```
+# .env file
+API_KEY=mysecretapikey
+BASE_URL=http://localhost:3000
+```
+2. Asenna python-dotenv-kirjasto, joka mahdollistaa .env-tiedoston lataamisen Pythonissa:
+```bash
+pip install python-dotenv
+```
+3. Luo Python-kirjasto, joka lataa .env-tiedoston ja määrittelee muuttujat Robot Frameworkille:
+```Python
+"""load_env.py"""
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_KEY = os.getenv('API_KEY')
+BASE_URL = os.getenv('BASE_URL')
+```
+4. Käytä Python-kirjastoa Robot Framework -testissä:
+```robotframework
+*** Settings ***
+Documentation     Esimerkki ympäristömuuttujien käytöstä
+Library           Collections
+Variables         load_env.py
+
+*** Test Cases ***
+Example Test Case
+    [Documentation]    Esimerkkitapaus, jossa käytetään ympäristömuuttujia
+    Log    API Key: ${API_KEY}
+    Log    Base URL: ${BASE_URL}
+```
+Tässä esimerkissä `.env`-tiedosto sisältää salasanat ja muut luottamukselliset tiedot, `load_env.py`-tiedosto lataa nämä tiedot ja tarjoaa ne Robot Framework -testille. Testissä voit sitten käyttää näitä muuttujia ilman, että ne näkyvät suoraan koodissa.
+
+**Huom! Muista lisätä `.env`-tiedosto `.gitignore`-listalle, jotta se ei tallennu GitHub-hakemistoon.**
+
+## Tietojen salaaminen
 
 [CryptoLibrary](https://pypi.org/project/robotframework-crypto/) on Python-kirjasto salasanojen turvalliseen käsittelyyn. CryptoLibrary käyttää [epäsymmetristä elliptistä salausta](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) luottamuksellisten tietojen turvalliseen tallentamiseen. 
 
@@ -15,12 +68,12 @@ Lisätietoa:
 - [Protect your test data with Robot Framework CryptoLibrary](https://michaelhallik.github.io/blog/2021/11/24/Robot-Framework-Crypto-Library)
 - [Robot Framework CryptoLibrary | pypi.org](https://pypi.org/project/robotframework-crypto/)
 
-## Asennus
+### Asennus
 Asenna CryptoLibrary antamalla komento:
 ```bash
 pip install --upgrade robotframework-crypto
 ```
-## Salausavainten generointi
+### Salausavainten generointi
 Aloita CryptoLibraryn käyttö antamalla komento: 
 ```bash
 python -m CryptoLibrary
@@ -37,24 +90,24 @@ Konsoli tulostaa lisäksi polun mistä tiedostot löytyvät. Lopuksi myös julki
 
 Yksityistä avainta tarvitaan arvojen purkamiseen testipalvelimella. Se on kopioitava manuaalisesti tai lisättävä komentorivikäyttöliittymän (CLI) kautta.
 
-## Tietojen salaaminen
+### Tietojen salaaminen
 Tiedot salataan käyttämällä CryptoClient työkalua. Anna komento:
 ```bash
 python -m CryptoClient
 ```
 Valitse `Encrypt` -> `Enter the password to encrypt` ja kirjoita salattava tieto. Kopioi salattu tieto osaksi koodia. Muista kopioida myös teksti `crypt:`.
 
-## CryptoLibraryn käyttö testeissä
+### CryptoLibraryn käyttö testeissä
 Ohessa on esimerkki, jossa on salattu sekä käyttäjätunnus että salasana. Kun testi ajetaan, molempien muuttujien salaus puretaan ja tiedot syötetään normaalisti verkkosovelluksen kenttiin. Jos argumentti `variable_decryption=True`, kaikki testisarjan tai testitapauksen yhteydessä käytettävissä olevat muuttujat, jotka sisältävät salattua tekstiä, puretaan automaattisesti. Huomaa kuitenkin, että lokitiedostossa kaikki puretut tekstit korvataan merkkijonolla `***`.
 
 ```robotframework
 *** Settings ***
 Library     Browser    auto_closing_level=SUITE
-Library     CryptoLibrary    variable_decryption=True
+Library     CryptoLibrary    variable_decryption=True   #Kryptatut muuttujat puretaan automaattisesti
 
 *** Variables ***
-${Username}    crypt:cmypu/F5B/bS1ne9tlocGDZBdgh3ZY4tSDRmUFv2NlX5bYTrvJ+uLK960DEP78zU7PNb30ZF/GgKROT4nOUwXQSJe6M=
-${Password}    crypt:X1lHMoitGdxBPfGRoLsiGfgIRYnVLOyBU0TX8GCGFU8hYGGXIYOgTE2Excy3moGUWJaw+iV59NBxpUsx 
+${Username}    crypt:vo3X+rL2c/oc6YEZpX2/UI9cCnhCnbTwNWa23KMnA2/T5U0AAEj2U9Dk752O9y2gsR/kUUjfF3RIfqOdmDgRGQ==
+${Password}    crypt:Ykew9/KogtKZu+Sju2KRp4q03VK49CLiW2ADwO9YwUv0FTJXSQS18lDZh2Xxo5B7LKc4N6sohur2K5dkY0s= 
 ${Message}     Hello, Robot Framework!\nHow are you today?
 
 *** Test Cases ***

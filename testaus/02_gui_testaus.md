@@ -1,4 +1,4 @@
-# 02. Browser libraryn käyttö
+# 02. Käyttöliittymän (GUI) testaus
 
 ## Tausta ja tavoite
 Tämän ohjeen tarkoitus on esitellä perusesimerkki, kuinka ottaa yhteys verkkosovellukseen ja käyttää resurssitiedostoja piilottamaan kirjautumissalasana. Tämä esimerkki on jatkokehitetty versio [Browser Libraryn 3. esimerkistä](https://robotframework-browser.org/#examples). Esimerkissä käytetään `Type Secret` avainsanaa piilotettujen käyttäjätietojen syöttämiseen verkkosivulle. Lisäksi opetuksillisista syistä selainikkuna jätetään testin jälkeen auki ja tietojen syöttämiseen on lisätty viiveitä, joita normaaleissa verkkosovellustesteissä ei tarvita. 
