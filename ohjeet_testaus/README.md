@@ -5,13 +5,13 @@ Tieto- ja viestintätekniikka<br>
 Metropolia Ammattikorkeakoulu<br>
 
 ## Johdanto
-Tämä hakemisto toimii Terveyssovelluksen kehitys -projektin testaukseen liittyvän osion koontina.
+Tähän hakemistoon on kerätty ohjeita Robot Frameworkin käytöstä testaukseen liittyen.
 
-- [01_robot_framework_asennus](./01_robot_framework_asennus.md) - pikaopas Robot Framework ja sen lisäosien asentamiseen
-- [02_cucumber_asennus_ja_testaus](./02_cucumber_asennus_ja_testaus.md) - JS node -pohjaisen automaatiotestaustyökalun asennusohjeet
-- [03_html_raporttien_esikatselu](./03_html_raporttien_esikatselu.md) - Ohjeet HTML-sivujen esittämiseen Githubissa
-- [04_browser_library_esimerkki](./04_browser_library_esimerkki.md) - Esimerkki Browser Libraryn käytöstä
-- [05_robot_framework_pikaohje.md](05_robot_framework_pikaohje.md)
-- [06_requests_library_ja_api_testaus.md](06_requests_library_ja_api_testaus.md)
-- [07_cryptolibrary.md](07_cryptolibrary.md)
-- [09_AI_ML_ja_testaus.md](09_AI_ML_ja_testaus.md)
+- [01_asennukset.md](./01_asennukset.md) - Robot Framework ja sen lisäosien asentaminen
+- [02_gui_testaus.md](./02_gui_testaus.md) - Esimerkkejä käyttöliittymän testaamisesta ja Browser Libraryn käytöstä
+- [03_tietojen_salaus.md](03_tietojen_salaus.md) - Esimerkkejä tietojen piilottamisesta ja salaamisesta
+- [04_raportit_ja_lokitiedostot.md](./04_raportit_ja_lokitiedostot.md) - Ohjeet raporttien ja lokitiedostojen käsittelyyn
+- [05_taustapalvelimen_testaus.md](./05_taustapalvelimen_testaus.md) - Esimerkkejä taustapalveliment testaukseen
+- [06_ai_ja_testaus.md](./06_ai_ja_testaus.md) - Tietoa tekoälyn käytöstä testaamisessa
+- [10_pikaohjeet.md](./10_pikaohjeet.md) - Pikaohjeet Robot Frameworkista ja sen käytöstä
+

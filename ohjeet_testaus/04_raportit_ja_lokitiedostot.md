@@ -1,4 +1,5 @@
-# HTML-sivujen esikatselu GitHubissa
+# 04. Raportit ja lokitiedostot
+
 HTML-sivujen esikatseluun GitHubissa on muutamia tapoja tarpeidesi mukaan. Seuraavassa on joitakin yleisimpiä menetelmiä:
 
 ## 1. Nopea esikatselu
