@@ -1,6 +1,6 @@
 .venv
 *.txt
-*.html
+.html
 *.xml
 *.png
 .env
