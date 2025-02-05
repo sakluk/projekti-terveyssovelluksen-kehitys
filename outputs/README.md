@@ -4,4 +4,3 @@ Tässä kansiossa on esimerkit testien suorittamisesta generoiduista tulostiedos
 
 - [report.html](./report.html) - testiraportti
 - [log.html](./log.html) - lokitiedosto
-- [output.xml](./output.xml) - tulostiedosto (XML)
