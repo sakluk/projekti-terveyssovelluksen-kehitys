@@ -9,3 +9,10 @@ Ohjelmointiympäristönä projektissa käytetään Visual Studio Codea, joten oh
 Tämän kansion päätasolta löytyvät tämän tiedoston lisäksi:
 - `.gitignore` - lista tiedostoista ja kansioista, joita ei tuoda tänne
 - `requirements.txt`- lista Python-lisäpaketeista, joita käytetään Robot Frameworkin yhteydessä
+
+Kansiorakenne on seuraava
+- [kuvat](./kuvat) - sisältää ohjeissa ja esimerkeissä käytettävät kuvat
+- [ohjeet_testaus](./ohjeet_testaus)- ohjeita testaukseen
+- [ohjeet_versionhallinta](./ohjeet_versionhallinta) - ohjeita versionhallintaan
+- [python](./python) - Python-koodiesmerkit
+- [robot](./robot) - Robot Framework esimerkit
