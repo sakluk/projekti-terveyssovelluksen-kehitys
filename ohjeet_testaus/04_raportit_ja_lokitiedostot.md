@@ -1,13 +1,15 @@
 # 04. Raportit ja lokitiedostot
 
-Kun testit ajetaan, useita tulostiedostoja generoidaan. Ne kaikki liittyvät jollakin tavalla testien tuloksiin. Tulostiedostot konfiguroidaan antamalla komentorivillä lisäparametreja. Erikoisarvoa `NONE` voidaan käyttää estämään tiettyjen tulostietojen generoinnin.
+Lähde: [Robot Framework User Guide - Ch. 3.6 Output files](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#output-files)
 
-## Tuloshakemisto
+Kun testit ajetaan, useita tulostiedostoja generoidaan. Ne kaikki liittyvät jollakin tavalla testien tuloksiin. Tulostiedostot konfiguroidaan antamalla komentoriville lisäparametreja. 
+
+## Tuloshakemisto (`--outputdir`)
 
 Kaikkien tulostiedostojen sijainti voidaan asettaa antamalla absoluuttinen hakemistonpolku, mutta useimmiten riittää suhteelisen polun käyttö. Oletushakemisto on se hakemisto, missä testin suoritus on aloitettu, mutta sen voi vaihtaa lisäparametrilla `--outputdir` tai `-d`. Esimerkiksi:
 
 ```bash
-robot --outputdir output tests/test1.robot
+robot --outputdir outputs tests/test1.robot
 ```
 suorittaa alihakemistosta `tests` löytyvän `test1.robot` testin ja tallentaa tulostiedostot rinnakkaishakemistoon `output`. Tyypillinen hakemistorakenne on esim. seuraava:
 ```
@@ -16,10 +18,10 @@ projekti/
 │   └── test1.robot
 │   └── test2.robot
 │   └── testX.robot
-└── output/
+└── outputs/
 ```
 
-## Tulostiedosto
+## Tulostiedosto (`--output`)
 
 Tulostiedostot sisältävät kaikki testisuoritusten tulokset koneluettavassa XML tai JSON formaatissa. Loki, raportti ja xUnit tiedostot tyypillisesti generoidaan näistä. Tulostiedostoja on mahdollista yhdistellä ja jälkikäsitellä [rebot](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#rebot)-työkalulla.
 
@@ -30,7 +32,7 @@ Tulostiedostot on mahdollista poistaa käytöstä käyttämällä erikoisarvoa N
 robot --output NONE --report NONE --log NONE tests/test1.robot
 ```
 
-## Lokitiedosto
+## Lokitiedosto (`--log`)
 
 Lokitiedosto sisältää yksityiskohtaiset tiedot testitapausten suorituksesta HTML-formaatissa. Ne on järjestetty hierarkisesti testikokonaisuuksiin (test suites), testitapauksiin (test cases) ja avainsanoihin (keywords). Lokitiedostot sisältävät myös tilastoja, kuten 
 - kuinka monta testiä suoritettin (Total),
@@ -42,11 +44,12 @@ Lisäksi näytetään testeihin kulunut aika (Elapsed) sekä pylväsdiagrammin a
 Komentorivin lisäparametri `--log` tai `-l` määrittelee minne lokitiedosto luodaan. Oletusarvoisesti lokitiedoston nimeksi tulee `Log.html`.
 
 Ohessa on esimerkki kuvankaappaus lokitiedostosta:
+
 ![Esimerkki lokitiedostosta](https://robotframework.org/robotframework/latest/images/log_passed.png)
 
 Lisätietoja: [Log-file](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#log-file)
 
-## Raportti
+## Raportti (`--report`)
 
 Raportti sisältää yhteenvedon testien suorituksesta HTML-formaatissa. Raporttiin kerätään tilastoja perustuen tageihin ja suoritettuihin testijoukkoihin (test suites) sekä listan kaikista suoritetuista testitapauksista (test cases). Kun sekä raportti ja lokitiedosto generoidaan, raportti sisältää linkkejä lokitiedostoon helpottamaan navigointia ja tarkempien tietojen tutkimista varten. 
 
@@ -56,13 +59,13 @@ Komentorivin lisäparametri `--report` tai `-r` määrittelee minne raportti luo
 
 Lisätietoa: [Report file](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#report-file)
 
-## Debuggaustiedosto
+## Debuggaustiedosto (`--debug_file`)
 
 Debuggaustiedostot ovat puhtaita tekstitiedostoja, jotka kirjoitetaan testien suorittamisen aikana. Kaikki testikirjastoista saapuvat viestit, testien aloitus ja lopetushetket ja avainsanat tallennetaan niihin. Debuggaustietoja voidaan käyttää testien suorituksen monitorointiin.
 
-Debuggaustietoja ei luoda, ellei erikseen anneta komentorivillä lisäparametria `--debug_file` tai `-b`.
+**HUOM!** Debuggaustietoja ei luoda, ellei erikseen anneta komentorivillä lisäparametria `--debug_file` tai `-b`.
 
-## Tulostiedostojen aikaleimaus
+## Tulostiedostojen aikaleimaus (`--timestampoutputs`)
 
 Kaikki generoidut tulostiedostot voidaan automaattisesti aikaleimata antamalla lisäparametri `timestampoutputs` tai `-T`. Kun tätä parametria käytetään, aikaleima muotoa `YYYYMMDD-hhmmss` lisätään tiedostojen nimeen. Esim. antamalla komento:
 ```bash
@@ -77,33 +80,41 @@ luo seuraavat tulostiedostot:
 Robot Frameworkin käyttöoppaan kappaleesta [3.6 Output files](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#output-files) löytyy lisätietoa myös muista lisäparametreista.
 
 
-HTML-sivujen esikatseluun GitHubissa on muutamia tapoja tarpeidesi mukaan. Seuraavassa on joitakin yleisimpiä menetelmiä:
+## HTML-sivut GitHubissa
 
-## 1. Nopea esikatselu
-Jos haluat nähdä nopean esikatselun HTML-tiedostosta missä tahansa julkisessa arkistossa, voit käyttää [GitHub HTML Preview][ref1], kolmannen osapuolen palvelua, joka renderöi HTML-tiedoston suoraan GitHubista. Liitä vain `https://htmlpreview.github.io/?` HTML-tiedoston alkuperäisen URL-osoitteen eteen. Voit esimerkiksi esikatsella tätä tiedostoa: 
+Voit luoda Github-projektillesi verkkosivuston käyttämällä [GitHub pages](https://pages.github.com/) -työkalua. GithHub-sivut toimivat suoraan GitHubista käsin.
 
-[https://github.com/qentinelqi/qweb/blob/master/test/resources/alert.html](https://github.com/qentinelqi/qweb/blob/master/test/resources/alert.html)
+## GitHub.io sivujen avaaminen
 
-käyttämällä tätä URL-osoitetta: 
+Ohessa on [pikaohjeet](https://docs.github.com/en/pages/quickstart) projektisi GitHub-sivujen luomiseksi.
 
-[https://htmlpreview.github.io/?https://github.com/necolas/css3-social-signin-buttons/blob/master/index.html](https://htmlpreview.github.io/?https://github.com/qentinelqi/qweb/blob/master/test/resources/alert.html)
+1. GitHubissa millä tahansa sivulla, valitse oikeasta ylänurkasta `+` (Create new...) > New Repository.
+2. Kirjoita uuden repository nimeksi `username.github.io`, missä `username` on GitHub käyttäjätunnuksesi.
+3. Valitse uuden repository näkyvyys (visibility).
+4. Valitse: **Initialize this repository with a README**.
+5. Klikkaa: **Create repository**.
 
-## 2. Projektin HTML-sivut
-Jos haluat luoda projektillesi verkkosivun HTML-tiedostojen avulla, voit käyttää [GitHub Pages][ref2] -ominaisuutta, jonka avulla voit isännöidä ja julkaista verkkosivuja GitHubin kautta. 
+Tämän jälkeen voit julkaista minkä tahansa oman GitHub-hakemistosi osoitteessa: `https://username.github.io`.
 
-Käyttääksesi GitHub Pagesia sinun täytyy luoda erityinen haara nimeltä `gh-pages` arkistoosi ja työntää HTML-tiedostosi tähän haaraan. Sen jälkeen voit tarkastella verkkosivujasi osoitteessa `http://username.github.io/repo`, jossa `username` on GitHub-käyttäjätunnuksesi ja `repo` on arkistosi nimi.
+## Hakemiston julkaiseminen github.io:ssa
 
-## 3. HTML-tiedostojen esikatselu paikallisesti
-Jos haluat esikatsella HTML-tiedostoja paikallisella koneellasi, voit kloonata arkiston ja avata HTML-tiedostot selaimellasi. Jos haluat kloonata arkistosi, sinun on asennettava [Git](https://git-scm.com/) ja ajettava tämä komento päätelaitteessa: 
+Tämän jälkeen valitse GitHubissa oman sovelluksesi sivusto ja tee seuraavat toimenpiteet:
 
-`git clone https://github.com/username/repo.git`, jossa 
+1. GitHub-hakemistossasi valitse hakemiston asetukset (**Settings**).
+2. Siirry Settings-sivulla alaspäin ja valitse **Pages**.
+3. Pages-sivulla valitse julkaistavan sovelluksesi haara (**Branch**), esim. `main`.
+4. Klikkaa **Save**.
 
-- `käyttäjätunnus` on GitHub-käyttäjätunnuksesi ja
-- `repo` on arkistosi nimi.
+GitHub-hakemistosi (repository) avautuu automaattisesti sivulle: `https://username.github.io/repositoryn_nimi`
 
-Sen jälkeen voit siirtyä kansioon, johon kloonasit arkistosi, ja avata HTML-tiedostot selaimellasi.
+## Sivujen muokkaaminen
 
-Lähde: Keskustelu Bingin kanssa, 2/4/2024
+1. Muokkaa projektiasi VSCodessa niin, että jokaisessa kansiossa on `README.md`-tiedosto. Nämä muutetaan automaattisesti HTML-tiedostoiksi.
+2. Lisää jokaiseen `README.md`-tiedostoon hyperlinkit kansiosta löytyviin muihin Markdown- tai HTML-tiedostoihin.
+3. Työnnä (Push, Synchronize) uudet versiot kansioiden `README.md`-tiedostoista GitHubiin.
 
-[ref1]: https://htmlpreview.github.io/ "GitHub HTML Preview"
-[ref2]: https://docs.github.com/pages/quickstart "Quickstart for Github Pages - Github Docs"
+Tämän seurauksena README-tiedostot toimivat hakemistojen index.html tiedostoina, joista on linkit kansiossa oleviin muihin tiedostoihin.
+
+## Esimerkki github.io-sivustosta
+- Tutustu https://sakluk.github.io/projekti-terveyssovelluksen-kehitys/ 
+- Vertaa GitHub-hakemistoon: https://github.com/sakluk/projekti-terveyssovelluksen-kehitys
