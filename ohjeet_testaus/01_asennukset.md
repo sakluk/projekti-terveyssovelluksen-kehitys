@@ -14,7 +14,7 @@ Tulemme käyttämään kurssilla seuraavia työkaluja:
 -----
 **Huom!** 
 
-Robot Frameworkin kanssa verkkosovellusten testaamisessa käytetään usein [SeleniumLibrarya](https://robotframework.org/SeleniumLibrary/). Se on vanhempi lisäkirjasto kuin `BrowserLibrary` ja siihen löytyy erittäin hyvin esimerkkejä. Käytämme kuitenkin tällä kurssilla `BrowserLibrarya`. Jos tahdot kokeilla `SeleniumLibrarya`, asentamisen jälkeen on vielä asennettava selain- ja käyttöjärjestelmäkohtaiset [selainohjaimet](https://robotframework.org/SeleniumLibrary/#browser-drivers) selaimille. 
+Robot Frameworkin kanssa verkkosovellusten testaamisessa käytetään usein [SeleniumLibrarya](https://robotframework.org/SeleniumLibrary/). Se on vanhempi lisäkirjasto kuin `BrowserLibrary` ja siihen löytyy erittäin hyvin esimerkkejä. Käytämme kuitenkin tällä kurssilla `BrowserLibrarya`. 
 
 ## Asennusohjeet
 
@@ -31,12 +31,13 @@ Samoin oletetaan, että olet aiemmassa jaksossa suorittanut Web-sovelluskehitys-
 Näitä uusia kansioita käytetään ohjelmistotestauksen opetteluun. Myöhemmin tulette ryhmänne kanssa tekemään samanlaisen kansiorakenteen omalle terveyssovelluksellenne. Projektin kansiorakenne tulee näyttämään esim. seuraavanlaiselta:
 ```
 oman-projektin-nimi
-   > Frontend
-   > Backend
-   > tests
-      > front
-      > back
+   > Frontend/
+   > Backend/
+   > tests/
+   > resources/   
+   > outputs/   
 ``` 
+Lisätietoa: [Project structure](https://docs.robotframework.org/docs/examples/project_structure)
 
 ### 2. Python-testi
 Testaa ensiksi, että Python-asennus on kunnossa.
@@ -191,7 +192,7 @@ pip install -r requirements.txt
 
 
 ### 13. Asennusten testaus
-Kopioi [asennustesti.py](./python/asennustesti.py) tiedosto `testaus`-kansioon ja aja se. Jos asennukset ovat kunnossa, tuloksena terminaali-ikkunaan tulostuu, esim.
+Kopioi [asennustesti.py](./python/asennustesti.py) tiedosto oman projektisi kansioon ja aja se. Jos asennukset ovat kunnossa, tuloksena terminaali-ikkunaan tulostuu, esim.
 ```
 Robot Framework: 7.2
 Browser: 19.3.0
