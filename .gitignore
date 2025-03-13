@@ -2,6 +2,6 @@
 *.txt
 .html
 *.xml
-*.png
+# *.png
 .env
 **/__pycache__
