@@ -15,5 +15,5 @@ Kansiorakenne on seuraava
 - [ohjeet_testaus](./ohjeet_testaus)- ohjeita testaukseen
 - [ohjeet_versionhallinta](./ohjeet_versionhallinta) - ohjeita versionhallintaan
 - [python](./python) - Python-koodiesmerkit
-- [robot](./robot) - Robot Framework esimerkit
+- [tests](./tests) - Robot Framework esimerkit
 - [outputs](./outputs) - Esimerkkejä testien suoritusten tulostiedostoista
