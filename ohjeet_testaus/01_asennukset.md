@@ -37,6 +37,17 @@ oman-projektin-nimi
    > resources/   
    > outputs/   
 ``` 
+**Huom!** Jos sovelluksesi selain (Frontend) ja taustapalvelin (Backend) ovat erillisiä projekteja, eli sijaitsevat eri kansioissa, tee Python asennukset selaimen (Frontend) alle, esim.
+```
+selain-projektin-nimi
+   > js
+   > assets/
+   > ...
+   > tests/
+   > resources/   
+   > outputs/   
+``` 
+
 Lisätietoa: [Project structure](https://docs.robotframework.org/docs/examples/project_structure)
 
 ### 2. Python-testi
