@@ -203,7 +203,7 @@ pip install -r requirements.txt
 
 
 ### 13. Asennusten testaus
-Kopioi [asennustesti.py](./python/asennustesti.py) tiedosto oman projektisi kansioon ja aja se. Jos asennukset ovat kunnossa, tuloksena terminaali-ikkunaan tulostuu, esim.
+Kopioi [asennustesti.py](../python/asennustesti.py) tiedosto oman projektisi kansioon ja aja se. Jos asennukset ovat kunnossa, tuloksena terminaali-ikkunaan tulostuu, esim.
 ```
 Robot Framework: 7.2
 Browser: 19.3.0
