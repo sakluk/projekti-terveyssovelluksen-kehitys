@@ -12,6 +12,7 @@ Tähän hakemistoon on kerätty ohjeita Robot Frameworkin käytöstä testauksee
 - [03_tietojen_salaus.md](03_tietojen_salaus.md) - Esimerkkejä tietojen piilottamisesta ja salaamisesta
 - [04_raportit_ja_lokitiedostot.md](./04_raportit_ja_lokitiedostot.md) - Ohjeet raporttien ja lokitiedostojen käsittelyyn
 - [05_taustapalvelimen_testaus.md](./05_taustapalvelimen_testaus.md) - Esimerkkejä taustapalveliment testaukseen
-- [06_ai_ja_testaus.md](./06_ai_ja_testaus.md) - Tietoa tekoälyn käytöstä testaamisessa
+- [06_ohjelmistotestauksen_historia.md](./06_ohjelmistotestauksen_historia.md) - Lyhyt ohjelmistestauksen historia
+- [07_ai_ja_testaus.md](./07_ai_ja_testaus.md) - Tietoa tekoälyn käytöstä testaamisessa
 - [10_pikaohjeet.md](./10_pikaohjeet.md) - Pikaohjeet Robot Frameworkista ja sen käytöstä
 

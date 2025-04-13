@@ -1,4 +1,5 @@
- # 06. AI ja testaus
+ # 07
+ . AI ja testaus
 
 Oheinen infograafi on kopioitu/linkattu suoraan sivulta: [AI/ML assisted software testing tools cheat sheet | valagroup.com](https://www.valagroup.com/blog/ai-ml-assisted-software-testing-tools-cheat-sheet/).
 
