@@ -122,4 +122,10 @@ Kun muutospyyntösi on hyväksytty:
 - **Ratkaise yhdistämiskonfliktit**: Jos konflikteja ilmenee, VS Codessa on sisäänrakennettu konfliktinratkaisueditori auttamaan niiden selvittämisessä
 - **Käytä merkityksellisiä vahvistusviestejä**: Kirjoita selkeitä vahvistusviestejä, jotka selittävät, mitä muutoksia tehtiin ja miksi
 
-Tämä opas kattaa koko työnkulun muutostpyyntöjen luomiseen, lähettämiseen ja hallintaan GitHubissa käyttäen Visual Studio Coden integroituja versionhallintatyökaluja. Näitä vaiheita noudattamalla voit osallistua tehokkaasti projekteihin GitHubissa.
+## Lisätietoa
+
+- [Git Pull Requests | geeksforgeeks.org](https://www.geeksforgeeks.org/git-pull-request/)
+- [Creating a pull request | github.com](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
+- [About branches | github.com](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)
+- [git request-pull documentation](https://git-scm.com/docs/git-request-pull)
+
