@@ -5,7 +5,7 @@ Tämän ohjeen tarkoitus on esitellä perusesimerkki, kuinka ottaa yhteys verkko
 
 Esimerkissä käytetään testisivua: https://www.selenium.dev/selenium/web/web-form.html, mistä löytyy tyypillisimmät verkkosivujen visuaaliset ja interaktiiviset komponentit. Alla on kuvankaappaus testisivusta. 
 
-![Selenium Web Form Example](./kuvat/selenium_web_form.png)<br>
+![Selenium Web Form Example](../kuvat/selenium_web_form.png)<br>
 *Kuva 1. Verkkolomake, jota käytetään oheisessa esimerkissä.*
 
 
