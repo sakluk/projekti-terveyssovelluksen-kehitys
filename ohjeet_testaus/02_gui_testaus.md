@@ -62,7 +62,7 @@ robot browser_demo.robot
 
 Joskus kirjautumisprosessi voi olla monivaiheinen. Esimerkiksi [moodle.metropolia.fi](https://moodle.metropolia.fi)-sivulla pitää ensiksi valita "Kirjaudu" -linkki, jonka jälkeen pääsee valitsemaan kirjautumistavan (Metropolia, Haka tunnus, Paikallinen tunnus). Vasta tämän jälkeen aukeaa kirjautumissivu. Kirjautumissivulla on oletuskirjautumiskentät (username, password), joihin syötetään käyttäjänimi ja salasana. Nämä on tallennettu ``Keywords.robot`-tiedostoon. Oman sovelluksesi kirjautumissivu voi vaatia ensiksi jonkin elementin valitsemista. 
 
-![Moodle etusivu ja Kirjaudu nappula](./kuvat/moodle_aloitussivu.png)<br>
+![Moodle etusivu ja Kirjaudu nappula](../kuvat/moodle_aloitussivu.png)<br>
 *Kuva 2. Moodlen etusivun oikeassa ylänurkasta löytyy linkki: Kirjaudu.*
 
 Tässä esimerkkikoodi [moodle.robot](./robot/moodle.robot). Huomaa, että esimerkissä on käytetty `Click with Options` hidastamaan toimintaa, jotta näet mitä eri sivuilla tapahtuu. Omissa testeissäsi voit poistaa nämä hidasteet ja käyttää suoraan `Click`-avainsanaa.
