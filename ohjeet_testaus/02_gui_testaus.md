@@ -65,7 +65,7 @@ Joskus kirjautumisprosessi voi olla monivaiheinen. Esimerkiksi [moodle.metropoli
 ![Moodle etusivu ja Kirjaudu nappula](../kuvat/moodle_aloitussivu.png)<br>
 *Kuva 2. Moodlen etusivun oikeassa ylänurkasta löytyy linkki: Kirjaudu.*
 
-Tässä esimerkkikoodi [moodle.robot](./robot/moodle.robot). Huomaa, että esimerkissä on käytetty `Click with Options` hidastamaan toimintaa, jotta näet mitä eri sivuilla tapahtuu. Omissa testeissäsi voit poistaa nämä hidasteet ja käyttää suoraan `Click`-avainsanaa.
+Tässä esimerkkikoodi [moodle.robot](../tests/moodle.robot). Huomaa, että esimerkissä on käytetty `Click with Options` hidastamaan toimintaa, jotta näet mitä eri sivuilla tapahtuu. Omissa testeissäsi voit poistaa nämä hidasteet ja käyttää suoraan `Click`-avainsanaa.
 
 ```robotframework
 *** Settings ***
