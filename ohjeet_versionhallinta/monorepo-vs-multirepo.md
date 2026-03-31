@@ -107,7 +107,7 @@ my-project-robot-tests/     ← oma repo
 | Suuret, itsenäiset tiimit | Voi olla raskas | Parempi |
 | Erilliset release-syklit eri osille | Vaikeampi hallita | Parempi |
 
-> **Nyrkkisääntö:** Aloita monoreposlla. Voit aina pilkkoa repositorion myöhemmin erillisiksi – päinvastainen suunta on huomattavasti työläämpää.
+> **Nyrkkisääntö:** Aloita monorepositiolla. Voit aina pilkkoa repositorion myöhemmin erillisiksi – päinvastainen suunta on huomattavasti työläämpää.
 
 ---
 
@@ -172,15 +172,15 @@ build/
 
 ## 8. Akateemiset lähteet
 
-- **Forsgren, N., Humble, J. & Kim, G. (2018).** *Accelerate: The Science of Lean Software and DevOps.* IT Revolution Press.
+- **Forsgren, N., Humble, J. & Kim, G. (2018).** *Accelerate: The Science of Lean Software and DevOps.* IT Revolution Press. [MetCat](https://metropolia.finna.fi/Record/3amk.271437?sid=5304248061)
   – Osoittaa, että korkean suorituskyvyn tiimit käyttävät trunk-based developmentia, johon monorepo sopii luontevasti.
 
-- **Potvin, R. & Levenberg, J. (2016).** Why Google Stores Billions of Lines of Code in a Single Repository. *Communications of the ACM, 59*(7), 78–87.
+- **Potvin, R. & Levenberg, J. (2016).** Why Google Stores Billions of Lines of Code in a Single Repository. *Communications of the ACM, 59*(7), 78–87. [MetCat](https://metropolia.finna.fi/PrimoRecord/pci.cdi_crossref_primary_10_1145_2854146?sid=5304249405)
   – Googlen monorepo-kokemus: skaalautuvuushaasteet realisoituvat vasta hyvin suuressa mittakaavassa.
 
-- **Bass, L., Weber, I. & Zhu, L. (2015).** *DevOps: A Software Architect's Perspective.* Addison-Wesley.
+- **Bass, L., Weber, I. & Zhu, L. (2015).** *DevOps: A Software Architect's Perspective.* Addison-Wesley. [MetCat](https://metropolia.finna.fi/PrimoRecord/pci.cdi_proquest_ebookcentral_EBC7116434?sid=5304250146)
   – Käsittelee deployment pipeline -arkkitehtuureja, joissa repositoriorakenne vaikuttaa suoraan CD-kypsyyteen.
 
 ---
 
-*Dokumentti laadittu Metropolia Ammattikorkeakoulun web-sovelluskehityksen kurssimateriaalia varten.*
+*Dokumentti laadittu Metropolia Ammattikorkeakoulun web-sovelluskehityksen kurssimateriaalia varten Claude Sonnet 4.6 laajaa kielimallia hyödyntäen.*
