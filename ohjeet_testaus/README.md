@@ -14,5 +14,6 @@ Tähän hakemistoon on kerätty ohjeita Robot Frameworkin käytöstä testauksee
 - [05_taustapalvelimen_testaus.md](./05_taustapalvelimen_testaus.md) - Esimerkkejä taustapalveliment testaukseen
 - [06_ohjelmistotestauksen_historia.md](./06_ohjelmistotestauksen_historia.md) - Lyhyt ohjelmistestauksen historia
 - [07_ai_ja_testaus.md](./07_ai_ja_testaus.md) - Tietoa tekoälyn käytöstä testaamisessa
+- [08_dokumentointi.md](./08_dokumentointi.md) - Vinkkejä testauksen dokumentointiin
 - [10_pikaohjeet.md](./10_pikaohjeet.md) - Pikaohjeet Robot Frameworkista ja sen käytöstä
 
