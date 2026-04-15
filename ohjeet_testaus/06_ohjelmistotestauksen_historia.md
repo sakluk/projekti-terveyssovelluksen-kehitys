@@ -43,7 +43,7 @@ Ketterät ([Agile](https://en.wikipedia.org/wiki/Agile_software_development)) me
 
 ## Tekoäly testauksen apuna (2015-nykyaika)
 
-[Viime vuosina tekoäly ja koneoppiminen ovat tulleet osaksi ohjelmistotestausta](https://keenious.com/explore/text/76f4ac1be8c0c23be8f5f3365088bff282cea0e6). Nämä teknologiat auttavat tunnistamaan testauskohteita, generoimaan testitapauksia ja ennustamaan mahdollisia ongelma-alueita ohjelmistossa.
+[Viime vuosina tekoäly ja koneoppiminen ovat tulleet osaksi ohjelmistotestausta](https://claude.ai/share/f325bf5c-b968-4510-840d-a5c14cb8344d). Nämä teknologiat auttavat tunnistamaan testauskohteita, generoimaan testitapauksia ja ennustamaan mahdollisia ongelma-alueita ohjelmistossa.
 
 ---
 
